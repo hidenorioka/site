@@ -1,3 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-export default defineConfig({});
+const SITE_URL = "https://hidenorioka.github.io";
+const BASE_NAME = "/site";
+
+export default defineConfig({ site: SITE_URL, base: BASE_NAME });
