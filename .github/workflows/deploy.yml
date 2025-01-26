@@ -40,6 +40,8 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       - name: Generate Tag
         run: |
           TAG_NAME=$(TZ=Asia/Tokyo date +"%Y%m%d-%H%M%S")
