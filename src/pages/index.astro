@@ -1,12 +1,64 @@
 ---
 import "@styles/global.css";
-import Welcome from "@components/Welcome.astro";
-import Layout from "@layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import githubMarkIcon from "@assets/github-mark.svg";
+
+const SITE_NAME = "hidenorioka";
+const SITE_URL = "https://https://hidenorioka.github.io/site";
+const SITE_DESCRIPTION = "";
 ---
 
-<Layout>
-  <Welcome />
-</Layout>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/site/favicon.svg" />
+    <link rel="sitemap" href="/site/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE_NAME}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <link rel="canonical" href={SITE_URL} />
+    <meta property="og:title" content={SITE_NAME} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+  </head>
+  <body class="h-[calc(100svh_-_50px)] min-w-[340px] bg-gray-100">
+    <main class="h-full">
+      <div class="h-full flex items-center justify-center flex-1 shrink-0">
+        <section class="bg-white shadow-md rounded-[4px] p-6 w-80">
+          <div class="text-center">
+            <h1 class="text-[20px] font-[600] text-gray-800">hidenorioka</h1>
+            <p class="text-gray-500">Web Frontend Developer</p>
+          </div>
+          <div class="mt-4 border-t pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-center justify-center gap-1">
+                <span class="inline-block">
+                  <img
+                    src={githubMarkIcon.src}
+                    width="16"
+                    height="16"
+                    alt="Github"
+                  />
+                </span>
+                <a
+                  href="https://github.com/hidenorioka"
+                  target="_blank"
+                  class="text-blue-400 hover:opacity-60 duration-[0.3s] text-[16px]"
+                >
+                  @hidenorioka
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="border-t-1 border-t-gray-200 mx-8">
+      <p class="text-[12px] text-center py-4">© 2025 hidenorioka</p>
+    </footer>
+  </body>
+</html>
