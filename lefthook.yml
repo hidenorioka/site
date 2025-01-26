@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: yarn lint:fix {staged_files}
+    format:
+      run: yarn format {staged_files} --ignore-unknown
