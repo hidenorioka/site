@@ -2,14 +2,16 @@
 const config = {
   tabWidth: 2,
   semi: true,
-  singleQuote: true,
-  /** @see https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#recommended-configuration */
-  plugins: ['prettier-plugin-astro'],
+  singleQuote: false,
+  plugins: [
+    /** @see https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#recommended-configuration */
+    "prettier-plugin-astro",
+  ],
   overrides: [
     {
-      files: '*.astro',
+      files: "*.astro",
       options: {
-        parser: 'astro',
+        parser: "astro",
       },
     },
   ],
