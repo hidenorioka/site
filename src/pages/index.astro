@@ -24,6 +24,21 @@ const SITE_DESCRIPTION = "";
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:description" content={SITE_DESCRIPTION} />
+
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DFL2VYFKNP"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DFL2VYFKNP");
+    </script>
   </head>
   <body class="h-[calc(100svh_-_50px)] min-w-[340px] bg-gray-100">
     <main class="h-full">
@@ -33,6 +48,7 @@ const SITE_DESCRIPTION = "";
             <h1 class="text-[20px] font-[600] text-gray-800">hidenorioka</h1>
             <p class="text-gray-500">Web Frontend Developer</p>
           </div>
+
           <div class="mt-4 border-t pt-4">
             <ul class="space-y-2">
               <li class="flex items-center justify-center gap-1">
