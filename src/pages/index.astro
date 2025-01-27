@@ -1,6 +1,7 @@
 ---
 import "@styles/global.css";
 
+import GoogleAnalytic from "@components/GoogleAnalytic.astro";
 import githubMarkIcon from "@assets/github-mark.svg";
 
 const SITE_NAME = "hidenorioka";
@@ -25,20 +26,7 @@ const SITE_DESCRIPTION = "";
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:description" content={SITE_DESCRIPTION} />
 
-    <script
-      type="text/partytown"
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DFL2VYFKNP"></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        // eslint-disable-next-line prefer-rest-params
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-DFL2VYFKNP");
-    </script>
+    <GoogleAnalytic />
   </head>
   <body class="h-[calc(100svh_-_50px)] min-w-[340px] bg-gray-100">
     <main class="h-full">
