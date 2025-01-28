@@ -25,5 +25,11 @@ jobs:
       - name: Run ESLint
         run: yarn lint
 
+      - name: Run Type Check
+        run: yarn type-check
+
+      - name: Run Astro Check
+        run: yarn astro-check
+
       - name: Build Astro Project
         run: yarn build
