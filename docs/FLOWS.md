@@ -18,3 +18,20 @@
     B --> C[🔖 Generate Release Tag]
     C --> D[🗒️ Create Release Note（Manuel）]
 ```
+
+<br>
+
+# RENOVATE FLOW
+
+```mermaid
+  graph TD
+    A[📃 Renovate PR①]
+    B[📃 Renovate PR②]
+    C[📃 Renovate PR③]
+    D[renovate branch]
+    E[main branch]
+    A --> D
+    B --> D
+    C --> D
+    D --> | squash merge | E
+```
