@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix",
     "lint:config": "npx eslint --inspect-config",
     "check": "astro check",
+    "type-check": "tsc --noEmit",
     "format": "prettier --write"
   },
   "dependencies": {
