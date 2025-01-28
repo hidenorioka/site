@@ -29,7 +29,7 @@ jobs:
         run: yarn type-check
 
       - name: Run Astro Check
-        run: yarn check
+        run: yarn astro-check
 
       - name: Build Astro Project
         run: yarn build
