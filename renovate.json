@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranches": ["renovate"],
   "extends": ["config:recommended"],
+  "baseBranches": ["renovate-base"],
   "dependencyDashboard": false,
   "schedule": ["on friday"],
   "major": {
