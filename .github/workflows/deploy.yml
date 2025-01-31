@@ -22,7 +22,10 @@ jobs:
         uses: withastro/action@v2
         with:
           node-version: "20.15.0"
-
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "./dist"
   deploy:
     name: Deploy
     needs: build
