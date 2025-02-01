@@ -58,6 +58,10 @@ jobs:
     needs: tag
     runs-on: ubuntu-latest
     steps:
+      - name: Setup
+        # タイトルと本文の自動生成の際に、本文が空になってしまう問題の対応
+        # タグ生成完了からインターバルを設定してみる
+        run: sleep 10
       - name: Publish Release Note
         uses: ncipollo/release-action@v1
         with:
