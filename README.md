@@ -1,3 +1,5 @@
 # [hidenorioka.com](https://hidenorioka.com)
 
-個人ポータルサイト
+<a href="https://hidenorioka.com" target="_blank" rel="noopener noreferrer">
+  <img src="/public/repo-ogp.png" alt="個人ポータルサイト">
+</a>
