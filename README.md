@@ -1,3 +1,3 @@
-# hidenorioka/site
+# [hidenorioka.com](https://hidenorioka.com)
 
-個人ポータルサイト [hidenorioka](https://hidenorioka.com)
+個人ポータルサイト
