@@ -1,0 +1,22 @@
+---
+import "@styles/global.css";
+
+import Meta from "@components/Meta.astro";
+import GoogleAnalytics from "@components/GoogleAnalytics.astro";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <Meta />
+    <GoogleAnalytics />
+  </head>
+  <body class="h-[calc(100svh_-_50px)] min-w-[340px] bg-gray-100">
+    <main class="h-full">
+      <slot />
+    </main>
+    <footer class="border-t-1 border-t-gray-200 mx-8">
+      <p class="text-[12px] text-center py-4">© 2025 hidenorioka</p>
+    </footer>
+  </body>
+</html>
