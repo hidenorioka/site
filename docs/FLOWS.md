@@ -16,7 +16,7 @@
   graph TD
     A[👷 Build] --> | need to approve on Github Actions | B[🚀 Deploy]
     B --> C[🔖 Generate Release Tag]
-    C --> D[🗒️ Create Release Note（Manuel）]
+    C --> D[🗒️ Create Release Note]
 ```
 
 <br>
@@ -28,7 +28,7 @@
     A[📃 Renovate PR①]
     B[📃 Renovate PR②]
     C[📃 Renovate PR③]
-    D[renovate branch]
+    D[renovate-base branch]
     E[main branch]
     A --> D
     B --> D
