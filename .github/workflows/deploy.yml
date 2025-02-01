@@ -28,23 +28,38 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy
         uses: actions/deploy-pages@v4
 
   tag:
     name: Tag
     needs: deploy
     runs-on: ubuntu-latest
+    outputs:
+      TAG_NAME: ${{ steps.tag.outputs.TAG_NAME }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Generate Tag
+        id: tag
         run: |
           TAG_NAME=$(TZ=Asia/Tokyo date +"%Y%m%d-%H%M%S")
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git tag $TAG_NAME
           git push origin $TAG_NAME
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_OUTPUT
+
+  note:
+    name: Note
+    needs: tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish Release Note
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ needs.tag.outputs.TAG_NAME }}
+          generate_release_notes: true
