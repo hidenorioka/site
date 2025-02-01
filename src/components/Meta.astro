@@ -1,32 +1,40 @@
 ---
 type Props = {
   title?: string;
+  description?: string;
 };
 
-const { title } = Astro.props;
+const { title: customTitle, description: customDescription } = Astro.props;
 const { pathname } = Astro.url;
 
 const SITE_NAME = "hidenorioka";
 const SITE_URL = "https://hidenorioka.com";
-const SITE_DESCRIPTION = "";
+const SITE_DESCRIPTION =
+  "hidenoriokaの個人ポータルサイトです。最新の活動状況やリンクをまとめています。フォローやお問い合わせはこちらから。";
 
-const titleText = title ? `${title} - ${SITE_NAME}` : SITE_NAME;
+const title = customTitle ? `${customTitle} - ${SITE_NAME}` : SITE_NAME;
 const url = `${SITE_URL}${pathname}`;
+const description = customDescription || SITE_DESCRIPTION;
 ---
+
+<title>{title}</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="canonical" href={url} />
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="generator" content={Astro.generator} />
-
-<title>{titleText}</title>
-<meta name="description" content={SITE_DESCRIPTION} />
-<link rel="canonical" href={url} />
-
-<meta property="og:title" content={titleText} />
-<meta property="og:type" content="website" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
 <meta property="og:url" content={url} />
+<meta property="og:image" content={`${SITE_URL}/ogp.png`} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
 <meta property="og:site_name" content={SITE_NAME} />
-<meta property="og:description" content={SITE_DESCRIPTION} />
+<meta property="og:locale" content="ja_JP" />
