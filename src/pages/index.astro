@@ -1,52 +1,38 @@
 ---
-import "@styles/global.css";
+import AppLayout from "@components/AppLayout.astro";
 
-import Meta from "@components/Meta.astro";
-import GoogleAnalytic from "@components/GoogleAnalytics.astro";
 import githubMarkIcon from "@assets/github-mark.svg";
 ---
 
-<!doctype html>
-<html lang="ja">
-  <head>
-    <Meta />
-    <GoogleAnalytic />
-  </head>
-  <body class="h-[calc(100svh_-_50px)] min-w-[340px] bg-gray-100">
-    <main class="h-full">
-      <div class="h-full flex items-center justify-center flex-1 shrink-0">
-        <section class="bg-white shadow-md rounded-[4px] p-6 w-80">
-          <div class="text-center">
-            <h1 class="text-[20px] font-[600] text-gray-800">hidenorioka</h1>
-            <p class="text-gray-500">Web Frontend Developer</p>
-          </div>
-
-          <div class="mt-4 border-t pt-4">
-            <ul class="space-y-2">
-              <li class="flex items-center justify-center gap-1">
-                <span class="inline-block">
-                  <img
-                    src={githubMarkIcon.src}
-                    width="16"
-                    height="16"
-                    alt="Github"
-                  />
-                </span>
-                <a
-                  href="https://github.com/hidenorioka"
-                  target="_blank"
-                  class="text-blue-400 hover:opacity-60 duration-[0.3s] text-[16px]"
-                >
-                  @hidenorioka
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
+<AppLayout>
+  <div class="h-full flex items-center justify-center flex-1 shrink-0">
+    <section class="bg-white shadow-md rounded-[4px] p-6 w-80">
+      <div class="text-center">
+        <h1 class="text-[20px] font-[600] text-gray-800">hidenorioka</h1>
+        <p class="text-gray-500">Web Frontend Developer</p>
       </div>
-    </main>
-    <footer class="border-t-1 border-t-gray-200 mx-8">
-      <p class="text-[12px] text-center py-4">© 2025 hidenorioka</p>
-    </footer>
-  </body>
-</html>
+
+      <div class="mt-4 border-t pt-4">
+        <ul class="space-y-2">
+          <li class="flex items-center justify-center gap-1">
+            <span class="inline-block">
+              <img
+                src={githubMarkIcon.src}
+                width="16"
+                height="16"
+                alt="Github"
+              />
+            </span>
+            <a
+              href="https://github.com/hidenorioka"
+              target="_blank"
+              class="text-blue-400 hover:opacity-60 duration-[0.3s] text-[16px]"
+            >
+              @hidenorioka
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</AppLayout>

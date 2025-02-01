@@ -1,7 +1,17 @@
 ---
+type Props = {
+  title?: string;
+};
+
+const { title } = Astro.props;
+const { pathname } = Astro.url;
+
 const SITE_NAME = "hidenorioka";
 const SITE_URL = "https://hidenorioka.com";
 const SITE_DESCRIPTION = "";
+
+const titleText = title ? `${title} - ${SITE_NAME}` : SITE_NAME;
+const url = `${SITE_URL}${pathname}`;
 ---
 
 <meta charset="UTF-8" />
@@ -10,11 +20,13 @@ const SITE_DESCRIPTION = "";
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="generator" content={Astro.generator} />
-<title>{SITE_NAME}</title>
+
+<title>{titleText}</title>
 <meta name="description" content={SITE_DESCRIPTION} />
-<link rel="canonical" href={SITE_URL} />
-<meta property="og:title" content={SITE_NAME} />
+<link rel="canonical" href={url} />
+
+<meta property="og:title" content={titleText} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={SITE_URL} />
+<meta property="og:url" content={url} />
 <meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:description" content={SITE_DESCRIPTION} />
