@@ -1,7 +1,10 @@
 ---
 import AppLayout from "@components/AppLayout.astro";
 
-import githubMarkIcon from "@assets/github-mark.svg";
+import iconGithub from "@assets/icon-logo-github.svg";
+import iconLinkedIn from "@assets/icon-logo-linkedin.png";
+import iconWantedly from "@assets/icon-logo-wantedly.png";
+import iconYoutrust from "@assets/icon-logo-youtrust.png";
 ---
 
 <AppLayout>
@@ -12,23 +15,54 @@ import githubMarkIcon from "@assets/github-mark.svg";
         <p class="text-gray-500">Web Frontend Developer</p>
       </div>
 
-      <div class="mt-4 border-t pt-4">
-        <ul class="space-y-2">
-          <li class="flex items-center justify-center gap-1">
-            <span class="inline-block">
-              <img
-                src={githubMarkIcon.src}
-                width="16"
-                height="16"
-                alt="Github"
-              />
-            </span>
+      <div class="mt-4 border-t pt-5">
+        <ul class="flex gap-6 justify-center items-center">
+          <li>
             <a
               href="https://github.com/hidenorioka"
               target="_blank"
-              class="text-blue-400 hover:opacity-60 duration-[0.3s] text-[16px]"
+              rel="noopener noreferrer"
+              class="inline-block w-[28px]"
             >
-              @hidenorioka
+              <!-- @see: https://github.com/logos -->
+              <img src={iconGithub.src} alt="Github" class="inline-block" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/hidenorioka"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block w-[28px]"
+            >
+              <!-- @see: https://brand.linkedin.com/policies -->
+              <img src={iconLinkedIn.src} alt="LinkedIn" class="inline-block" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.wantedly.com/id/vwkr6t"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block w-[28px]"
+            >
+              <!-- @see: https://wantedlyinc.com/ja/brand_assets -->
+              <img src={iconWantedly.src} alt="Wantedly" class="inline-block" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://youtrust.jp/users/hidenorioka"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block w-[28px]"
+            >
+              <!-- @see: ブランドロゴの提供なし？ -->
+              <img
+                src={iconYoutrust.src}
+                alt="YOUTRUST"
+                class="inline-block rounded-[50%]"
+              />
             </a>
           </li>
         </ul>
