@@ -1,0 +1,31 @@
+---
+type Props = {
+  items: {
+    text: string;
+    url?: string;
+  }[];
+};
+
+const { items } = Astro.props;
+---
+
+<ul class="text-[14px] break-all">
+  {
+    items.map(({ text, url }) => (
+      <li class="mb-1">
+        {typeof url === "string" ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline underline-offset-3"
+          >
+            {text}
+          </a>
+        ) : (
+          text
+        )}
+      </li>
+    ))
+  }
+</ul>

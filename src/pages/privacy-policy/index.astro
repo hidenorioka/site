@@ -1,0 +1,108 @@
+---
+import AppLayout from "@components/AppLayout.astro";
+
+import Section from "./_Section.astro";
+import SectionList from "./_SectionList.astro";
+import Paragraph from "./_Paragraph.astro";
+---
+
+<AppLayout title="プライバシーポリシー">
+  <div class="flex-1 px-6 py-10">
+    <div class="text-center">
+      <h1 class="text-[18px] font-bold">プライバシーポリシー</h1>
+    </div>
+
+    <div class="bg-white mt-10 rounded-[4px] p-6">
+      <Section heading="はじめに">
+        <Paragraph>
+          当サイト（以下、「本サイト」といいます）は、利用者のプライバシーを尊重し、個人情報の適切な管理に努めます。
+        </Paragraph>
+        <Paragraph>
+          本プライバシーポリシーは、本サイトが収集する情報の種類、その利用目的、および情報の管理方法について説明するものです。
+        </Paragraph>
+      </Section>
+      <Section heading="収集する情報">
+        <Paragraph>
+          本サイトでは、以下の情報を収集する場合があります。
+        </Paragraph>
+        <SectionList
+          items={[
+            {
+              text: "・Google Analyticsを利用したアクセス解析のためのデータ（クッキー、IPアドレス、ブラウザ情報など）",
+            },
+          ]}
+        />
+      </Section>
+      <Section heading="Google Analyticsの利用について">
+        <Paragraph>
+          本サイトでは、Googleが提供するアクセス解析ツール「Google
+          Analytics」を使用しています。
+        </Paragraph>
+        <Paragraph>
+          Google
+          Analyticsは、クッキー（Cookie）を使用して利用者のサイト訪問履歴を収集し、分析するために使用されます。
+        </Paragraph>
+        <Paragraph>
+          Google
+          Analyticsによって収集されたデータは、Googleのプライバシーポリシーに基づいて管理されます。詳細については、以下のリンクをご参照ください。
+        </Paragraph>
+        <SectionList
+          items={[
+            {
+              text: "・プライバシー ポリシー – ポリシーと規約 – Google",
+              url: "https://policies.google.com/privacy",
+            },
+            {
+              text: "・Terms of Service | Google Analytics – Google",
+              url: "https://marketingplatform.google.com/about/analytics/terms/jp/",
+            },
+            {
+              text: "・広告 – ポリシーと規約 – Google",
+              url: "https://policies.google.com/technologies/ads?hl=ja",
+            },
+          ]}
+        />
+      </Section>
+      <Section heading="クッキー（Cookie）の使用について">
+        <Paragraph>
+          本サイトでは、利用者の利便性向上およびアクセス解析のためにクッキーを使用する場合があります。
+        </Paragraph>
+        <Paragraph>
+          利用者はブラウザの設定を変更することで、クッキーの無効化や削除を行うことができます。ただし、その場合、本サイトの一部機能が利用できなくなる可能性があります。
+        </Paragraph>
+      </Section>
+      <Section heading="個人情報の利用目的">
+        <Paragraph>
+          本サイトでは、取得した情報を以下の目的で利用します。
+        </Paragraph>
+        <SectionList
+          items={[
+            {
+              text: "・サイトの運営および改善",
+            },
+            {
+              text: "・ユーザーの利便性向上",
+            },
+            {
+              text: "・アクセス解析およびマーケティング分析",
+            },
+          ]}
+        />
+      </Section>
+      <Section heading="個人情報の第三者提供">
+        <Paragraph>
+          本サイトでは、法令に基づく場合を除き、取得した個人情報を第三者に提供することはありません。
+        </Paragraph>
+      </Section>
+      <Section heading="プライバシーポリシーの変更">
+        <Paragraph>
+          本サイトでは、必要に応じて本プライバシーポリシーを変更することがあります。
+        </Paragraph>
+      </Section>
+
+      <div class="mt-10 text-right">
+        <p class="text-[14px]">2025年02月04日制定</p>
+      </div>
+    </div>
+  </div>
+</AppLayout>
