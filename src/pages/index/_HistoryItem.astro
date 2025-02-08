@@ -1,0 +1,22 @@
+---
+type Props = {
+  name: string;
+  start?: string;
+  end?: string;
+};
+
+const { name, start, end } = Astro.props;
+---
+
+<li class="flex items-center sm:gap-4 gap-2 not-last-of-type:mb-4">
+  <div
+    class="sm:w-[48px] sm:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0"
+  >
+  </div>
+  <div>
+    <h2 class="sm:text-[16px] text-[14px] font-bold">{name}</h2>
+    <p class="sm:text-[12px] text-[10px]">
+      {start}{end ? `〜${end}` : "〜現在"}
+    </p>
+  </div>
+</li>

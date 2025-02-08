@@ -498,6 +498,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/poppins@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "@fontsource/poppins@npm:5.1.1"
+  checksum: 10c0/22b73f498f5dfc6f42f9553d07f7277b04a86b7ab11bc0030bc75ab5feb46308af979fafcbe9dec66fa164955b0768920f8c43478a32f19d88b686ed1f542a63
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -6204,6 +6211,7 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.9.4"
     "@astrojs/sitemap": "npm:^3.2.1"
+    "@fontsource/poppins": "npm:^5.1.1"
     "@tailwindcss/vite": "npm:^4.0.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6"
     astro: "npm:^5.1.9"
