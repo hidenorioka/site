@@ -1,0 +1,19 @@
+---
+type Props = {
+  href: string;
+  external?: boolean;
+};
+
+const { href, external = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class="underline underline-offset-3"
+  {...external && {
+    target: "_blank",
+    rel: "noopener noreferrer",
+  }}
+>
+  <slot />
+</a>

@@ -1,10 +1,12 @@
 ---
 import AppLayout from "@components/AppLayout.astro";
+import Link from "@components/Link.astro";
 
 import iconGithub from "@assets/icon-logo-github.svg";
 import iconLinkedIn from "@assets/icon-logo-linkedin.png";
 import iconWantedly from "@assets/icon-logo-wantedly.png";
 import iconYoutrust from "@assets/icon-logo-youtrust.png";
+
 import Section from "./index/_Section.astro";
 import HistoryItem from "./index/_HistoryItem.astro";
 ---
@@ -12,16 +14,16 @@ import HistoryItem from "./index/_HistoryItem.astro";
 <AppLayout>
   <div class="flex-1">
     <div class="bg-gray-400 p-6">
-      <div class="flex items-center gap-4 sm:px-6">
+      <div class="flex items-center gap-4 md:px-6">
         <div>
           <img
             src="/icon.png"
             alt=""
-            class="rounded-[50%] sm:w-[120px] w-[80px]"
+            class="rounded-[50%] md:w-[120px] w-[80px]"
           />
         </div>
         <div>
-          <h1 class="sm:text-[32px] text-[28px] font-bold text-white">
+          <h1 class="md:text-[32px] text-[28px] font-bold text-white">
             hidenorioka
           </h1>
           <p class="text-white text-[16px]">Web Frontend Developer</p>
@@ -30,9 +32,11 @@ import HistoryItem from "./index/_HistoryItem.astro";
     </div>
 
     <Section>
-      <div class="sm:px-32">
-        <h2 class="font-bold">岡 英紀（HIDENORI OKA）</h2>
-        <div class="mt-2 sm:text-[16px] text-[14px]">
+      <div class="md:px-32">
+        <h2 class="font-bold md:text-[20px] text-[18px]">
+          岡 英紀 HIDENORI OKA
+        </h2>
+        <div class="md:mt-6 mt-4 md:text-[16px] text-[14px]">
           <p>1995年生まれ、兵庫県淡路市出身。</p>
           <p>
             暮らしも仕事も、「最小限」で「最大」の効果を生み出せるような設計に興味があります。
@@ -42,7 +46,7 @@ import HistoryItem from "./index/_HistoryItem.astro";
     </Section>
 
     <Section>
-      <ul class="flex gap-6 items-center sm:px-32 text-[16px]">
+      <ul class="flex gap-6 items-center md:px-32 text-[16px]">
         <li>
           <a
             href="https://github.com/hidenorioka"
@@ -94,26 +98,157 @@ import HistoryItem from "./index/_HistoryItem.astro";
       </ul>
     </Section>
 
-    <Section class="mt-10">
-      <ul class="sm:px-32">
-        <HistoryItem
-          name="GMOフィナンシャルホールディングス株式会社"
-          start="2023年11月"
-          summary="医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。\n現在はクリニック・薬局向けシステムのWebフロントエンド開発リードをしています。"
-        />
-        <HistoryItem
-          name="株式会社ラクスパートナーズ"
-          start="2019年1月"
-          end="2023年10月"
-          summary="未経験からアプリケーションエンジニアとして入社し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。"
-        />
-        <HistoryItem
-          name="三菱地所リアルエステートサービス株式会社"
-          start="2018年4月"
-          end="2018年6月"
-        />
-        <HistoryItem name="関西学院大学" start="2013年4月" end="2018年3月" />
-      </ul>
-    </Section>
+    <div class="md:flex">
+      <Section class="mt-10 md:flex-1">
+        <div class="md:pl-32">
+          <p class="font-bold md:text-[20px] text-[18px]">16PERSONALITIES</p>
+          <div class="md:mt-6 mt-4">
+            <Link
+              href="https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC"
+              external
+            >
+              <span class="md:text-[16px] text-[14px] font-bold"
+                >INFJ-T 提唱者</span
+              >
+            </Link>
+            <div class="md:mt-5 mt-3">
+              <div class="mb-3">
+                <p class="md:text-[14px] text-[12px]">エネルギー</p>
+                <div class="flex flex-col w-full max-w-[500px] pt-2">
+                  <div class="bg-red-600 h-[14px]">
+                    <div
+                      class="bg-gray-600 h-[14px] w-[19%] border-r-2 border-r-white"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between mt-1">
+                    <span class="inline-block md:text-[12px] text-[10px]"
+                      >外向型</span
+                    >
+                    <span
+                      class="inline-block md:text-[12px] text-[10px] font-bold"
+                      >内向型(81%)</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <p class="md:text-[14px] text-[12px]">意識</p>
+                <div class="flex flex-col w-full max-w-[500px] pt-2">
+                  <div class="bg-gray-600 h-[14px]">
+                    <div
+                      class="bg-blue-600 h-[14px] w-[54%] border-r-2 border-r-white"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between mt-1">
+                    <span
+                      class="inline-block md:text-[12px] text-[10px] font-bold"
+                      >直感型(54%)</span
+                    >
+                    <span class="inline-block md:text-[12px] text-[10px]"
+                      >観察型</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <p class="md:text-[14px] text-[12px]">気質</p>
+                <div class="flex flex-col w-full max-w-[500px] pt-2">
+                  <div class="bg-yellow-600 h-[14px]">
+                    <div
+                      class="bg-gray-600 h-[14px] w-[34%] border-r-2 border-r-white"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between mt-1">
+                    <span class="inline-block md:text-[12px] text-[10px]"
+                      >思考型</span
+                    >
+                    <span
+                      class="inline-block md:text-[12px] text-[10px] font-bold"
+                      >感情型(66%)</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <p class="md:text-[14px] text-[12px]">戦術</p>
+                <div class="flex flex-col w-full max-w-[500px] pt-2">
+                  <div class="bg-gray-600 h-[14px]">
+                    <div
+                      class="bg-green-600 h-[14px] w-[78%] border-r-2 border-r-white"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between mt-1">
+                    <span
+                      class="inline-block md:text-[12px] text-[10px] font-bold"
+                      >計画型(78%)</span
+                    >
+                    <span class="inline-block md:text-[12px] text-[10px]"
+                      >探索型</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <p class="md:text-[14px] text-[12px]">アイデンティティ</p>
+                <div class="flex flex-col w-full max-w-[500px] pt-2">
+                  <div class="bg-fuchsia-600 h-[14px]">
+                    <div
+                      class="bg-gray-600 h-[14px] w-[35%] border-r-2 border-r-white"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between mt-1">
+                    <span class="inline-block md:text-[12px] text-[10px]"
+                      >自己主張型</span
+                    >
+                    <span
+                      class="inline-block md:text-[12px] text-[10px] font-bold"
+                      >激動型(65%)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section class="mt-10 md:flex-1">
+        <div class="md:pr-32">
+          <p class="font-bold md:text-[20px] text-[18px]">CAREER</p>
+          <ul class="md:mt-6 mt-4">
+            <HistoryItem
+              name="GMOフィナンシャルホールディングス株式会社"
+              start="2023年11月"
+              summary="医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。\n現在はクリニック・薬局向けシステムのWebフロントエンド開発リードをしています。"
+            />
+            <HistoryItem
+              name="株式会社ラクスパートナーズ"
+              start="2019年1月"
+              end="2023年10月"
+              summary="未経験からアプリケーションエンジニアとして入社し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。"
+            />
+            <HistoryItem
+              name="三菱地所リアルエステートサービス株式会社"
+              start="2018年4月"
+              end="2018年6月"
+            />
+            <HistoryItem
+              name="関西学院大学"
+              start="2013年4月"
+              end="2018年3月"
+            />
+          </ul>
+        </div>
+      </Section>
+    </div>
   </div>
 </AppLayout>
