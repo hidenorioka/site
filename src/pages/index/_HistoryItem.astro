@@ -3,12 +3,13 @@ type Props = {
   name: string;
   start?: string;
   end?: string;
+  summary?: string;
 };
 
-const { name, start, end } = Astro.props;
+const { name, start, end, summary } = Astro.props;
 ---
 
-<li class="sm:not-last-of-type:mb-8 not-last-of-type:mb-4">
+<li class="sm:mb-10 mb-8">
   <div class="flex items-center sm:gap-4 gap-2">
     <div
       class="sm:w-[48px] sm:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0"
@@ -21,4 +22,12 @@ const { name, start, end } = Astro.props;
       </p>
     </div>
   </div>
+
+  {
+    summary ? (
+      <div class="mt-2 sm:ml-16 ml-8">
+        <p class="sm:text-[14px] text-[12px] whitespace-pre-wrap">{summary}</p>
+      </div>
+    ) : null
+  }
 </li>
