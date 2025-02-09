@@ -3,20 +3,31 @@ type Props = {
   name: string;
   start?: string;
   end?: string;
+  summary?: string;
 };
 
-const { name, start, end } = Astro.props;
+const { name, start, end, summary } = Astro.props;
 ---
 
-<li class="flex items-center sm:gap-4 gap-2 not-last-of-type:mb-4">
-  <div
-    class="sm:w-[48px] sm:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0"
-  >
+<li class="sm:mb-10 mb-8">
+  <div class="flex items-center sm:gap-4 gap-2">
+    <div
+      class="sm:w-[48px] sm:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0"
+    >
+    </div>
+    <div>
+      <h2 class="sm:text-[16px] text-[14px] font-bold">{name}</h2>
+      <p class="sm:text-[12px] text-[10px]">
+        {start}{end ? `〜${end}` : "〜現在"}
+      </p>
+    </div>
   </div>
-  <div>
-    <h2 class="sm:text-[16px] text-[14px] font-bold">{name}</h2>
-    <p class="sm:text-[12px] text-[10px]">
-      {start}{end ? `〜${end}` : "〜現在"}
-    </p>
-  </div>
+
+  {
+    summary ? (
+      <div class="mt-2 sm:ml-16 ml-8">
+        <p class="sm:text-[14px] text-[12px] whitespace-pre-wrap">{summary}</p>
+      </div>
+    ) : null
+  }
 </li>
