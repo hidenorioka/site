@@ -2,14 +2,15 @@
 type Props = {
   href: string;
   external?: boolean;
+  className?: string;
 };
 
-const { href, external = false } = Astro.props;
+const { href, external = false, className } = Astro.props;
 ---
 
 <a
   href={href}
-  class="underline underline-offset-3"
+  class:list={["underline underline-offset-3", className]}
   {...external && {
     target: "_blank",
     rel: "noopener noreferrer",

@@ -9,6 +9,7 @@ import iconYoutrust from "@assets/icon-logo-youtrust.png";
 
 import Section from "./index/_Section.astro";
 import HistoryItem from "./index/_HistoryItem.astro";
+import SocialIconItem from "./index/_SocialIconItem.astro";
 ---
 
 <AppLayout>
@@ -44,54 +45,30 @@ import HistoryItem from "./index/_HistoryItem.astro";
 
     <Section>
       <ul class="flex gap-6 items-center md:px-28 text-[16px]">
-        <li>
-          <a
-            href="https://github.com/hidenorioka"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block w-[28px]"
-          >
-            <!-- @see: https://github.com/logos -->
-            <img src={iconGithub.src} alt="Github" class="inline-block" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/hidenorioka"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block w-[28px]"
-          >
-            <!-- @see: https://brand.linkedin.com/policies -->
-            <img src={iconLinkedIn.src} alt="LinkedIn" class="inline-block" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.wantedly.com/id/vwkr6t"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block w-[28px]"
-          >
-            <!-- @see: https://wantedlyinc.com/ja/brand_assets -->
-            <img src={iconWantedly.src} alt="Wantedly" class="inline-block" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://youtrust.jp/users/hidenorioka"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block w-[28px]"
-          >
-            <!-- @see: ブランドロゴの提供なし？ -->
-            <img
-              src={iconYoutrust.src}
-              alt="YOUTRUST"
-              class="inline-block rounded-[50%]"
-            />
-          </a>
-        </li>
+        <!-- @see: https://github.com/logos -->
+        <SocialIconItem
+          href="https://github.com/hidenorioka"
+          iconSrc={iconGithub.src}
+          iconAlt="Github"
+        />
+        <!-- @see: https://brand.linkedin.com/policies -->
+        <SocialIconItem
+          href="https://www.linkedin.com/in/hidenorioka"
+          iconSrc={iconLinkedIn.src}
+          iconAlt="LinkedIn"
+        />
+        <!-- @see: https://wantedlyinc.com/ja/brand_assets -->
+        <SocialIconItem
+          href="https://www.wantedly.com/id/vwkr6t"
+          iconSrc={iconWantedly.src}
+          iconAlt="Wantedly"
+        />
+        <!-- @see: ブランドロゴの提供なし？ -->
+        <SocialIconItem
+          href="https://youtrust.jp/users/hidenorioka"
+          iconSrc={iconYoutrust.src}
+          iconAlt="YOUTRUST"
+        />
       </ul>
     </Section>
 

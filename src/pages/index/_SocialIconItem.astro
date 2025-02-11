@@ -1,0 +1,17 @@
+---
+import Link from "@components/Link.astro";
+
+type Props = {
+  href: string;
+  iconSrc: string;
+  iconAlt: string;
+};
+
+const { href, iconSrc, iconAlt } = Astro.props;
+---
+
+<li>
+  <Link href={href} className="inline-block w-[28px]" external>
+    <img src={iconSrc} alt={iconAlt} class="inline-block" />
+  </Link>
+</li>
