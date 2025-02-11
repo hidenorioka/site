@@ -10,6 +10,7 @@ import iconYoutrust from "@assets/icon-logo-youtrust.png";
 import Section from "./index/_Section.astro";
 import HistoryItem from "./index/_HistoryItem.astro";
 import SocialIconItem from "./index/_SocialIconItem.astro";
+import PersonalityMeter from "./index/_PersonalityMeter.astro";
 ---
 
 <AppLayout>
@@ -85,112 +86,48 @@ import SocialIconItem from "./index/_SocialIconItem.astro";
                 >INFJ-T 提唱者</span
               >
             </Link>
-            <div class="md:mt-5 mt-3">
-              <div class="mb-3">
-                <p class="md:text-[14px] text-[12px]">エネルギー</p>
-                <div class="flex flex-col w-full max-w-[500px] pt-2">
-                  <div class="bg-red-600 h-[14px]">
-                    <div
-                      class="bg-gray-600 h-[14px] w-[19%] border-r-2 border-r-white"
-                    >
-                    </div>
-                  </div>
-                  <div class="flex justify-between mt-1">
-                    <span class="inline-block md:text-[12px] text-[10px]"
-                      >外向型</span
-                    >
-                    <span
-                      class="inline-block md:text-[12px] text-[10px] font-bold"
-                      >内向型(81%)</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <p class="md:text-[14px] text-[12px]">意識</p>
-                <div class="flex flex-col w-full max-w-[500px] pt-2">
-                  <div class="bg-gray-600 h-[14px]">
-                    <div
-                      class="bg-blue-600 h-[14px] w-[54%] border-r-2 border-r-white"
-                    >
-                    </div>
-                  </div>
-                  <div class="flex justify-between mt-1">
-                    <span
-                      class="inline-block md:text-[12px] text-[10px] font-bold"
-                      >直感型(54%)</span
-                    >
-                    <span class="inline-block md:text-[12px] text-[10px]"
-                      >観察型</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <p class="md:text-[14px] text-[12px]">気質</p>
-                <div class="flex flex-col w-full max-w-[500px] pt-2">
-                  <div class="bg-yellow-600 h-[14px]">
-                    <div
-                      class="bg-gray-600 h-[14px] w-[34%] border-r-2 border-r-white"
-                    >
-                    </div>
-                  </div>
-                  <div class="flex justify-between mt-1">
-                    <span class="inline-block md:text-[12px] text-[10px]"
-                      >思考型</span
-                    >
-                    <span
-                      class="inline-block md:text-[12px] text-[10px] font-bold"
-                      >感情型(66%)</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <p class="md:text-[14px] text-[12px]">戦術</p>
-                <div class="flex flex-col w-full max-w-[500px] pt-2">
-                  <div class="bg-gray-600 h-[14px]">
-                    <div
-                      class="bg-green-600 h-[14px] w-[78%] border-r-2 border-r-white"
-                    >
-                    </div>
-                  </div>
-                  <div class="flex justify-between mt-1">
-                    <span
-                      class="inline-block md:text-[12px] text-[10px] font-bold"
-                      >計画型(78%)</span
-                    >
-                    <span class="inline-block md:text-[12px] text-[10px]"
-                      >探索型</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <p class="md:text-[14px] text-[12px]">アイデンティティ</p>
-                <div class="flex flex-col w-full max-w-[500px] pt-2">
-                  <div class="bg-fuchsia-600 h-[14px]">
-                    <div
-                      class="bg-gray-600 h-[14px] w-[35%] border-r-2 border-r-white"
-                    >
-                    </div>
-                  </div>
-                  <div class="flex justify-between mt-1">
-                    <span class="inline-block md:text-[12px] text-[10px]"
-                      >自己主張型</span
-                    >
-                    <span
-                      class="inline-block md:text-[12px] text-[10px] font-bold"
-                      >激動型(65%)</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ul class="md:mt-5 mt-3">
+              <PersonalityMeter
+                heading="エネルギー"
+                theme="red"
+                tendencies={[
+                  { label: "外向型", type: "low" },
+                  { label: "内向型", type: "high", percentage: 81 },
+                ]}
+              />
+              <PersonalityMeter
+                heading="意識"
+                theme="blue"
+                tendencies={[
+                  { label: "直感型", type: "high", percentage: 54 },
+                  { label: "観察型", type: "low" },
+                ]}
+              />
+              <PersonalityMeter
+                heading="気質"
+                theme="yellow"
+                tendencies={[
+                  { label: "思考型", type: "low" },
+                  { label: "感情型", type: "high", percentage: 66 },
+                ]}
+              />
+              <PersonalityMeter
+                heading="戦術"
+                theme="green"
+                tendencies={[
+                  { label: "計画型", type: "high", percentage: 78 },
+                  { label: "探索型", type: "low" },
+                ]}
+              />
+              <PersonalityMeter
+                heading="アイデンティティ"
+                theme="fuchsia"
+                tendencies={[
+                  { label: "自己主張型", type: "low" },
+                  { label: "激動型", type: "high", percentage: 65 },
+                ]}
+              />
+            </ul>
           </div>
         </div>
       </Section>
