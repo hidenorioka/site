@@ -8,7 +8,7 @@ import Career from "./index/_feature/Career.astro";
 ---
 
 <AppLayout>
-  <div class="flex-1">
+  <div class="flex-1 relative">
     <Header />
 
     <div class="p-6 max-w-[688px] m-auto">
@@ -25,4 +25,18 @@ import Career from "./index/_feature/Career.astro";
       </div>
     </div>
   </div>
+
+  <nav class="fixed top-[50%] right-[4%] lg:block hidden border-l-1 pl-4">
+    <ul class="space-y-2">
+      <li class="hover:opacity-50">
+        <a href="#introduction">INTRODUCTION</a>
+      </li>
+      <li class="hover:opacity-50">
+        <a href="#16personality">16PERSONALITIES</a>
+      </li>
+      <li class="hover:opacity-50">
+        <a href="#career">CAREER</a>
+      </li>
+    </ul>
+  </nav>
 </AppLayout>
