@@ -1,0 +1,45 @@
+---
+import Section from "./Section.astro";
+import SocialIconItem from "./SocialIconItem.astro";
+
+import iconGithub from "@assets/icon-logo-github.svg";
+import iconLinkedIn from "@assets/icon-logo-linkedin.png";
+import iconWantedly from "@assets/icon-logo-wantedly.png";
+import iconYoutrust from "@assets/icon-logo-youtrust.png";
+---
+
+<Section heading="INTRODUCTION">
+  <div class="md:text-[16px] text-[14px] md:mb-4 mb-6">
+    <p>1995年生まれ、兵庫県淡路市出身。</p>
+    <p>
+      暮らしも仕事も、「最小限」で「最大」の効果を生み出せるような設計に興味があります。
+    </p>
+  </div>
+
+  <ul class="flex md:gap-6 gap-10 items-center">
+    <!-- @see: https://github.com/logos -->
+    <SocialIconItem
+      href="https://github.com/hidenorioka"
+      iconSrc={iconGithub.src}
+      iconAlt="Github"
+    />
+    <!-- @see: https://brand.linkedin.com/policies -->
+    <SocialIconItem
+      href="https://www.linkedin.com/in/hidenorioka"
+      iconSrc={iconLinkedIn.src}
+      iconAlt="LinkedIn"
+    />
+    <!-- @see: https://wantedlyinc.com/ja/brand_assets -->
+    <SocialIconItem
+      href="https://www.wantedly.com/id/vwkr6t"
+      iconSrc={iconWantedly.src}
+      iconAlt="Wantedly"
+    />
+    <!-- @see: ブランドロゴの提供なし？ -->
+    <SocialIconItem
+      href="https://youtrust.jp/users/hidenorioka"
+      iconSrc={iconYoutrust.src}
+      iconAlt="YOUTRUST"
+    />
+  </ul>
+</Section>

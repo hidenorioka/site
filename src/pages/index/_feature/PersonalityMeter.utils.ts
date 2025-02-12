@@ -1,4 +1,4 @@
-import type { HighTendency, Tendency } from "./PersonaliryMeter.type";
+import type { HighTendency, Tendency } from "./PersonalityMeter.type";
 
 export const getTendencyLabel = (t: Tendency) => {
   if (t.type === "high") {

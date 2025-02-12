@@ -1,0 +1,57 @@
+---
+import Link from "@components/Link.astro";
+
+import Section from "./Section.astro";
+import PersonalityMeter from "./PersonalityMeter.astro";
+---
+
+<Section heading="16PERSONALITIES">
+  <Link
+    href="https://www.16personalities.com/ja/infj%E5%9E%8B%E3%81%AE%E6%80%A7%E6%A0%BC"
+    external
+  >
+    <span class="md:text-[16px] text-[14px] font-bold">INFJ-T 提唱者</span>
+  </Link>
+  <ul class="md:mt-5 mt-3">
+    <PersonalityMeter
+      heading="エネルギー"
+      theme="red"
+      tendencies={[
+        { label: "外向型", type: "low" },
+        { label: "内向型", type: "high", percentage: 81 },
+      ]}
+    />
+    <PersonalityMeter
+      heading="意識"
+      theme="blue"
+      tendencies={[
+        { label: "直感型", type: "high", percentage: 54 },
+        { label: "観察型", type: "low" },
+      ]}
+    />
+    <PersonalityMeter
+      heading="気質"
+      theme="yellow"
+      tendencies={[
+        { label: "思考型", type: "low" },
+        { label: "感情型", type: "high", percentage: 66 },
+      ]}
+    />
+    <PersonalityMeter
+      heading="戦術"
+      theme="green"
+      tendencies={[
+        { label: "計画型", type: "high", percentage: 78 },
+        { label: "探索型", type: "low" },
+      ]}
+    />
+    <PersonalityMeter
+      heading="アイデンティティ"
+      theme="fuchsia"
+      tendencies={[
+        { label: "自己主張型", type: "low" },
+        { label: "激動型", type: "high", percentage: 65 },
+      ]}
+    />
+  </ul>
+</Section>
