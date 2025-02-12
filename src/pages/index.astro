@@ -5,6 +5,7 @@ import Header from "./index/_feature/Header.astro";
 import Introduction from "./index/_feature/Introduction.astro";
 import Personality from "./index/_feature/Personality.astro";
 import Career from "./index/_feature/Career.astro";
+import FloatingNavigation from "./index/_feature/FloatingNavigation.astro";
 ---
 
 <AppLayout>
@@ -24,19 +25,7 @@ import Career from "./index/_feature/Career.astro";
         <Career />
       </div>
     </div>
-  </div>
 
-  <nav class="fixed top-[50%] right-[4%] lg:block hidden border-l-1 pl-4">
-    <ul class="space-y-2">
-      <li class="hover:opacity-50">
-        <a href="#introduction">INTRODUCTION</a>
-      </li>
-      <li class="hover:opacity-50">
-        <a href="#16personality">16PERSONALITIES</a>
-      </li>
-      <li class="hover:opacity-50">
-        <a href="#career">CAREER</a>
-      </li>
-    </ul>
-  </nav>
+    <FloatingNavigation />
+  </div>
 </AppLayout>
