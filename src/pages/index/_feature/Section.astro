@@ -1,11 +1,14 @@
 ---
 type Props = {
+  heading: string;
+  id: string;
   class?: string;
 };
 
-const { class: className } = Astro.props;
+const { id, heading, class: className } = Astro.props;
 ---
 
-<section class:list={["m-6", className]}>
+<section id={id} class:list={[className]}>
+  <p class="font-bold md:text-[20px] text-[18px] md:mb-6 mb-4">{heading}</p>
   <slot />
 </section>

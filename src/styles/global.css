@@ -1,10 +1,20 @@
 @import "@fontsource/poppins";
 @import "tailwindcss";
 
-body {
-  font-family: "Poppins", sans-serif;
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
 
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: 0.4px;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
+  }
+
+  summary::marker {
+    content: "";
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }

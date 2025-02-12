@@ -7,27 +7,44 @@ type Props = {
 };
 
 const { name, start, end, summary } = Astro.props;
+
+const hasSummary = !!summary;
 ---
 
-<li class="md:mb-10 mb-8">
-  <div class="flex items-center md:gap-4 gap-2">
-    <div
-      class="md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0"
-    >
-    </div>
-    <div>
-      <h2 class="md:text-[16px] text-[14px] font-bold">{name}</h2>
-      <p class="md:text-[12px] text-[10px]">
-        {start}{end ? `〜${end}` : "〜現在"}
-      </p>
-    </div>
-  </div>
-
+<li class="md:mb-8 mb-6">
   {
-    summary ? (
-      <div class="mt-2 md:ml-16 ml-8">
-        <p class="md:text-[14px] text-[12px] whitespace-pre-wrap">{summary}</p>
+    hasSummary ? (
+      <details class="group">
+        <summary class="flex items-center appearance-none cursor-pointer">
+          <div class="flex items-center md:gap-4 gap-2">
+            <div class="md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0" />
+            <div>
+              <h2 class="md:text-[16px] text-[14px] font-bold">{name}</h2>
+              <p class="md:text-[12px] text-[10px]">
+                {start}
+                {end ? `〜${end}` : "〜現在"}
+              </p>
+            </div>
+          </div>
+        </summary>
+
+        <div class="mt-2 md:ml-16 ml-8">
+          <p class="md:text-[14px] text-[12px] whitespace-pre-wrap">
+            {summary}
+          </p>
+        </div>
+      </details>
+    ) : (
+      <div class="flex items-center md:gap-4 gap-2">
+        <div class="md:w-[48px] md:h-[48px] w-[24px] h-[24px] rounded-[50%] bg-gray-600 shrink-0" />
+        <div>
+          <h2 class="md:text-[16px] text-[14px] font-bold">{name}</h2>
+          <p class="md:text-[12px] text-[10px]">
+            {start}
+            {end ? `〜${end}` : "〜現在"}
+          </p>
+        </div>
       </div>
-    ) : null
+    )
   }
 </li>
