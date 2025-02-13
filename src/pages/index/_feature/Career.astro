@@ -8,20 +8,64 @@ import HistoryItem from "./HistoryItem.astro";
     <HistoryItem
       name="GMOフィナンシャルホールディングス株式会社"
       start="2023年11月"
-      contents={{
-        summary:
-          "医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。現在は医療クリニック・薬局向けシステムのWebフロントエンド開発リードをしています。",
-      }}
-      isOpen
+      summary="医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。現在は医療クリニック・薬局向けシステムのWebフロントエンド開発リードをしています。"
+      contents={[
+        {
+          heading: "プロジェクト規模",
+          items: [
+            "自社エンジニア(10〜15名) + 外部ベンダー（10名〜）のウォーターフォール開発",
+          ],
+        },
+        {
+          heading: "使用技術",
+          items: [
+            "TypeScript, React, Next.js, GraphQL, Sentry, AWS CodeBuild, AWS CloudFront, AWS S3",
+          ],
+        },
+        {
+          heading: "担当プロジェクト",
+          items: [
+            {
+              heading: "医療プラットフォームシステムのフロントエンド開発・保守",
+              items: ["WIP"],
+            },
+            {
+              heading:
+                "処方箋モバイルオーダーシステムのフロントエンド開発・保守",
+              items: ["WIP"],
+            },
+            {
+              heading: "フロントエンドDevOps",
+              items: [
+                "WIP",
+                "CIの平均実行時間の改善",
+                "継続的なライブラリバージョン管理フローの整備",
+                "Sentryによるエラーログ集積・監視体制の整備",
+              ],
+            },
+            {
+              heading: "フロントエンド改善",
+              items: [
+                "WIP",
+                "Atomic DesignからBulletproof-React（features）への移行",
+                "ReduxからReact Context APIへの移行",
+                "ESLint v9（Flat Config）への移行",
+                "husky + lint-stagedからlefthookへの移行",
+              ],
+            },
+            {
+              heading: "エンジニア採用",
+              items: ["1次面接（現場エンジニア面接）を担当"],
+            },
+          ],
+        },
+      ]}
     />
     <HistoryItem
       name="株式会社ラクスパートナーズ"
       start="2019年1月"
       end="2023年10月"
-      contents={{
-        summary:
-          "未経験からアプリケーションエンジニアとして入社しました。客先常駐で合計4社の開発チームに参画し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。",
-      }}
+      summary="未経験からアプリケーションエンジニアとして入社しました。客先常駐で合計4社の開発チームに参画し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。"
     />
     <HistoryItem
       name="三菱地所リアルエステートサービス株式会社"

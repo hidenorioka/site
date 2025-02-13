@@ -1,0 +1,34 @@
+---
+import type { NestedTextList } from "./HistoryItem.type";
+import NestedListComponent from "./NestedList.astro";
+
+type Props = {
+  list: NestedTextList;
+  depth?: number;
+};
+const { list, depth = 0 } = Astro.props;
+---
+
+{
+  list.heading && (
+    <p class:list={["mb-2", depth === 0 && "font-bold"]}>{list.heading}</p>
+  )
+}
+<ul style={{ marginLeft: depth !== 0 ? `${depth}px` : undefined }}>
+  {
+    list.items.map((item) =>
+      typeof item === "string" ? (
+        <li class="mb-2">
+          <>
+            <span class="font-bold">・</span>
+            <span>{item}</span>
+          </>
+        </li>
+      ) : (
+        <li class="mb-2">
+          <NestedListComponent list={item} depth={depth + 20} />
+        </li>
+      ),
+    )
+  }
+</ul>

@@ -1,45 +1,61 @@
 ---
+import type { NestedTextList } from "./HistoryItem.type";
+import NestedList from "./NestedList.astro";
+
 type Props = {
   name: string;
   start: string;
   end?: string;
+  summary?: string;
   /** 初期状態でアコーディオン内容を表示するか */
   isOpen?: boolean;
-  contents?: {
-    summary: string;
-  };
+  contents?: NestedTextList[];
 };
 
-const { name, start, end, contents, isOpen = false } = Astro.props;
+const { name, start, end, summary, contents, isOpen = false } = Astro.props;
 
 const hasContents = !!contents;
 ---
 
-<li class="md:mb-4 mb-2">
+<li class="mb-3">
   {
     hasContents ? (
       <details
         open={isOpen}
-        class="hover:bg-gray-100  [&[open]]:bg-gray-100 transition duration-300 rounded-[6px] md:p-4 p-2"
+        class="hover:bg-gray-100  [&[open]]:bg-gray-100 transition duration-300 rounded-[6px] p-4"
       >
-        <summary class="flex items-center appearance-none cursor-pointer">
-          <div class="flex items-center gap-4">
-            <div class="md:w-[48px] md:h-[48px] w-[32px] h-[32px] rounded-[50%] bg-gray-600 shrink-0" />
-            <div>
-              <h3 class="md:text-[16px] text-[14px] font-bold">{name}</h3>
-              <p class="md:text-[12px] text-[10px]">
-                {`${start}${end ? `〜${end}` : "〜現在"}`}
-              </p>
+        <summary class="appearance-none cursor-pointer">
+          <div class="flex items-center">
+            <div class="flex items-center gap-4">
+              <div class="md:w-[48px] md:h-[48px] w-[32px] h-[32px] rounded-[50%] bg-gray-600 shrink-0" />
+              <div>
+                <h3 class="md:text-[16px] text-[14px] font-bold">{name}</h3>
+                <p class="md:text-[12px] text-[10px]">
+                  {`${start}${end ? `〜${end}` : "〜現在"}`}
+                </p>
+              </div>
             </div>
           </div>
+
+          {summary && (
+            <div class="md:text-[14px] text-[12px] pt-4">
+              <p>{summary}</p>
+            </div>
+          )}
         </summary>
 
-        <div class="md:mt-4 mt-0 p-4 md:text-[14px] text-[12px]">
-          <p>{contents.summary}</p>
+        <div class="md:p-4 p-0 md:text-[14px] text-[12px]">
+          {contents.length
+            ? contents.map((list) => (
+                <div class="mt-4">
+                  <NestedList list={list} />
+                </div>
+              ))
+            : null}
         </div>
       </details>
     ) : (
-      <div class="md:p-4 p-2">
+      <div class="p-4">
         <div class="flex items-center gap-4">
           <div class="md:w-[48px] md:h-[48px] w-[32px] h-[32px] rounded-[50%] bg-gray-600 shrink-0" />
           <div>
@@ -49,6 +65,12 @@ const hasContents = !!contents;
             </p>
           </div>
         </div>
+
+        {summary && (
+          <div class="md:text-[14px] text-[12px] pt-4">
+            <p>{summary}</p>
+          </div>
+        )}
       </div>
     )
   }
