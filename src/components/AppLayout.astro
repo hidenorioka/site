@@ -25,8 +25,12 @@ const { title } = Astro.props;
     </main>
     <footer class="border-t-1 border-t-gray-200 mx-8 pt-2">
       <ul class="pb-2 text-center">
-        <li class="text-[10px]">
-          <a href={PAGE_ROUTES.PRIVACY_POLICY}>プライバシーポリシー</a>
+        <li>
+          <a
+            href={PAGE_ROUTES.PRIVACY_POLICY}
+            class="text-[10px] hover:opacity-50 transition duration-300"
+            >プライバシーポリシー</a
+          >
         </li>
       </ul>
       <div class="pb-4 text-center">
