@@ -11,7 +11,9 @@ const { list, depth = 0 } = Astro.props;
 
 {
   list.heading && (
-    <p class:list={["mb-2", depth === 0 && "font-bold"]}>{list.heading}</p>
+    <p class="mb-2 md:text-[14px] text-[12px] underline underline-offset-5">
+      {list.heading}
+    </p>
   )
 }
 <ul style={{ marginLeft: depth !== 0 ? `${depth}px` : undefined }}>
@@ -19,14 +21,11 @@ const { list, depth = 0 } = Astro.props;
     list.items.map((item) =>
       typeof item === "string" ? (
         <li class="mb-2">
-          <>
-            <span class="font-bold">・</span>
-            <span>{item}</span>
-          </>
+          <span class="md:text-[14px] text-[12px]">{item}</span>
         </li>
       ) : (
         <li class="mb-2">
-          <NestedListComponent list={item} depth={depth + 20} />
+          <NestedListComponent list={item} depth={depth + 12} />
         </li>
       ),
     )
