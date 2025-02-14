@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      - renovate
 
 jobs:
   lint-and-build:
