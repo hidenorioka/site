@@ -9,7 +9,9 @@ type Props = {
 const { items } = Astro.props;
 ---
 
-<ul class="text-[14px] break-all">
+<ul
+  class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] break-all space-y-5"
+>
   {
     items.map(({ text, url }) => (
       <li class="mb-1">
@@ -18,7 +20,7 @@ const { items } = Astro.props;
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            class="underline underline-offset-3"
+            class="underline underline-offset-5 hover:opacity-50 transition duration-300"
           >
             {text}
           </a>

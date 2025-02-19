@@ -2,31 +2,23 @@
 type Props = {
   name: string;
   start: string;
-  end: string | undefined;
-  summary: string | undefined;
+  end?: string;
+  summary?: string;
 };
 
 const { name, start, end, summary } = Astro.props;
 ---
 
-<div class="flex items-center">
-  <div class="flex items-center gap-4">
-    <div
-      class="md:w-[48px] md:h-[48px] w-[32px] h-[32px] rounded-[50%] bg-gray-600 shrink-0"
-    >
-    </div>
-    <div>
-      <h3 class="md:text-[16px] text-[14px] font-bold">{name}</h3>
-      <p class="md:text-[12px] text-[10px]">
-        {`${start}${end ? `〜${end}` : "〜現在"}`}
-      </p>
-    </div>
-  </div>
-</div>
+<h3 class="md:text-[13px] text-[12px] md:mb-2 mb-2">
+  {name}
+</h3>
+<p class="md:text-[12px] text-[10px]">
+  {`${start}${end ? `〜${end}` : "〜現在"}`}
+</p>
 
 {
   summary && (
-    <div class="md:text-[14px] text-[12px] pt-4 md:px-4 px-0">
+    <div class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:pt-3 pt-2">
       <p>{summary}</p>
     </div>
   )
