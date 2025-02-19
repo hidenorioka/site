@@ -14,7 +14,7 @@
     "format": "prettier --write"
   },
   "dependencies": {
-    "@fontsource/poppins": "^5.1.1",
+    "@fontsource/hauora-sans": "^5.1.0",
     "astro": "^5.1.9"
   },
   "devDependencies": {

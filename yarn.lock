@@ -498,10 +498,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/poppins@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@fontsource/poppins@npm:5.1.1"
-  checksum: 10c0/22b73f498f5dfc6f42f9553d07f7277b04a86b7ab11bc0030bc75ab5feb46308af979fafcbe9dec66fa164955b0768920f8c43478a32f19d88b686ed1f542a63
+"@fontsource/hauora-sans@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource/hauora-sans@npm:5.1.0"
+  checksum: 10c0/ca918f94c90490c917962b9f6e3560fe7dc6b83d46da52cf2f752f42a46df8c1a1a4198ead21e2e24cdad3777621a41dfa5ece9e5e796fc1f89c812987058f40
   languageName: node
   linkType: hard
 
@@ -6211,7 +6211,7 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.9.4"
     "@astrojs/sitemap": "npm:^3.2.1"
-    "@fontsource/poppins": "npm:^5.1.1"
+    "@fontsource/hauora-sans": "npm:^5.1.0"
     "@tailwindcss/vite": "npm:^4.0.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6"
     astro: "npm:^5.1.9"

@@ -1,28 +1,25 @@
 ---
 import AppLayout from "@components/AppLayout.astro";
 
-import Header from "./index/_feature/Header.astro";
 import Introduction from "./index/_feature/Introduction.astro";
-import Personality from "./index/_feature/Personality.astro";
-import Career from "./index/_feature/Career.astro";
 import FloatingNavigation from "./index/_feature/FloatingNavigation.astro";
+import Career from "./index/_feature/Career.astro";
+import SocialLink from "./index/_feature/SocialLink.astro";
 ---
 
 <AppLayout>
   <div class="flex-1 relative">
-    <Header />
-
-    <div class="p-6 max-w-[688px] m-auto">
+    <div class="md:p-8 p-6 max-w-[688px] m-auto md:mt-10 mt-8">
       <div class="md:mb-18 mb-14">
         <Introduction />
       </div>
 
       <div class="md:mb-18 mb-14">
-        <Personality />
+        <Career />
       </div>
 
       <div class="md:mb-18 mb-14">
-        <Career />
+        <SocialLink />
       </div>
     </div>
 
