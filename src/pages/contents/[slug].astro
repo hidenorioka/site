@@ -1,0 +1,49 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import AppLayout from "@components/AppLayout.astro";
+
+import Heading2 from "./_feature/Heading2.astro";
+import Paragraph from "./_feature/Paragraph.astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+}>;
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+export async function getStaticPaths() {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const contents = await Astro.glob("../../contents/**/*.mdx");
+
+  return contents.map(
+    (content: { frontmatter: { title: string; slug: string } }) => ({
+      params: {
+        title: content.frontmatter.title,
+        slug: content.frontmatter.slug,
+      },
+      props: {
+        content,
+      },
+    }),
+  );
+}
+
+const { Content, frontmatter } = Astro.props.content;
+
+const components = {
+  h2: Heading2,
+  p: Paragraph,
+};
+---
+
+<AppLayout title={frontmatter.title}>
+  <article>
+    <div class="md:p-8 p-6 max-w-[688px] m-auto md:mt-10 mt-8">
+      <div class="md:mb-12 mb-8 text-center">
+        <h1 class="md:text-[20px] text-[18px]">{frontmatter.title}</h1>
+      </div>
+      <Content components={components} />
+    </div>
+  </article>
+</AppLayout>
