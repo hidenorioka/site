@@ -1,4 +1,6 @@
 ---
+import Link from "@components/Link.astro";
+
 type Props = {
   items: {
     text: string;
@@ -16,14 +18,13 @@ const { items } = Astro.props;
     items.map(({ text, url }) => (
       <li class="mb-1">
         {typeof url === "string" ? (
-          <a
+          <Link
             href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline underline-offset-5 hover:opacity-50 transition duration-300"
+            className="underline hover:opacity-50 transition duration-300"
+            external
           >
             {text}
-          </a>
+          </Link>
         ) : (
           text
         )}

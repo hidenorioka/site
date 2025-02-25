@@ -1,4 +1,6 @@
 ---
+import externalLinkIcon from "@assets/external-link.svg";
+
 type Props = {
   href: string;
   external?: boolean;
@@ -17,4 +19,9 @@ const { href, external = false, className } = Astro.props;
   }}
 >
   <slot />
+  {
+    external && (
+      <img src={externalLinkIcon.src} alt="" class="inline-block w-4 h-4" />
+    )
+  }
 </a>
