@@ -1,0 +1,10 @@
+---
+type Props = {
+  html: string;
+};
+
+const { html } = Astro.props;
+---
+
+{/** 外部からの利用のために後々サニタイズする */}
+<div set:html={html} />
