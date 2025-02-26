@@ -1,10 +1,12 @@
 ---
+import DOMPurify from "dompurify";
+
 type Props = {
   html: string;
 };
 
 const { html } = Astro.props;
+const cleanHTML = DOMPurify.sanitize(html);
 ---
 
-{/** 外部からの利用のために後々サニタイズする */}
-<div set:html={html} />
+<div set:html={cleanHTML} />

@@ -3,5 +3,7 @@ pre-commit:
   commands:
     lint:
       run: yarn lint:fix {staged_files}
+      stage_fixed: true
     format:
       run: yarn format {staged_files} --ignore-unknown
+      stage_fixed: true
