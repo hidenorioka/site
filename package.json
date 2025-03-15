@@ -14,9 +14,9 @@
     "format": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/mdx": "^4.2.0",
     "@fontsource/hauora-sans": "^5.1.0",
-    "astro": "^5.1.9",
+    "astro": "^5.5.2",
     "dompurify": "^3.2.4"
   },
   "devDependencies": {
