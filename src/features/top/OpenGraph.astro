@@ -1,0 +1,46 @@
+---
+import ogs from "open-graph-scraper";
+import { Image } from "astro:assets";
+import fallbackImg from "@assets/ogp-fallback.png";
+
+type Props = {
+  url: string;
+};
+
+let title = "";
+let ogUrl = "";
+let image = "";
+let imageAlt = "";
+
+const { url } = Astro.props;
+
+try {
+  const { result } = await ogs({ url });
+
+  title = result.ogTitle ?? "";
+  ogUrl = result.ogUrl ?? "";
+  image = result.ogImage?.[0]?.url ?? "";
+  imageAlt = result.ogImage?.[0]?.alt ?? "";
+} catch (error) {
+  console.error(error);
+}
+
+const isNoContent = !title && !ogUrl;
+---
+
+{
+  isNoContent ? null : (
+    <a href={ogUrl} target="_blank" class="inline-block max-w-[300px] w-full">
+      <Image
+        src={image}
+        alt={imageAlt}
+        width={600}
+        height={400}
+        onerror={`this.onerror=null; this.src='${fallbackImg.src}';`}
+      />
+      <span class="inline-block w-full md:text-[11px] text-[10px] md:leading-[1.6] leading-[1.5] bg-gray-300 p-2 opacity-70 truncate">
+        {title}
+      </span>
+    </a>
+  )
+}

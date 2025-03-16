@@ -1,12 +1,15 @@
 ---
+import OpenGraph from "./OpenGraph.astro";
+
 type Props = {
   name: string;
   start: string;
   end?: string;
   summary?: string;
+  links?: string[];
 };
 
-const { name, start, end, summary } = Astro.props;
+const { name, start, end, summary, links } = Astro.props;
 ---
 
 <h3 class="md:text-[13px] text-[12px] md:mb-2 mb-2">
@@ -20,6 +23,16 @@ const { name, start, end, summary } = Astro.props;
   summary && (
     <div class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:pt-3 pt-2">
       <p>{summary}</p>
+    </div>
+  )
+}
+
+{
+  (
+    <div class="flex flex-wrap gap-1 my-2">
+      {(links ?? []).map((link) => (
+        <OpenGraph url={link} />
+      ))}
     </div>
   )
 }
