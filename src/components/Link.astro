@@ -1,5 +1,6 @@
 ---
 import externalLinkIcon from "@assets/external-link.svg";
+import { Image } from "astro:assets";
 
 type Props = {
   href: string;
@@ -21,7 +22,7 @@ const { href, external = false, className } = Astro.props;
   <slot />
   {
     external && (
-      <img src={externalLinkIcon.src} alt="" class="inline-block w-4 h-4" />
+      <Image src={externalLinkIcon} alt="" class="inline-block w-4 h-4" />
     )
   }
 </a>

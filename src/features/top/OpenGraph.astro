@@ -1,5 +1,6 @@
 ---
 import ogs from "open-graph-scraper";
+import { Image } from "astro:assets";
 import fallbackImg from "@assets/ogp-fallback.png";
 
 type Props = {
@@ -29,16 +30,13 @@ const isNoContent = !title && !ogUrl;
 
 {
   isNoContent ? null : (
-    <a
-      href={ogUrl}
-      target="_blank"
-      class="inline-block md:max-w-[300px] w-full"
-    >
-      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-      <img
+    <a href={ogUrl} target="_blank" class="inline-block max-w-[300px] w-full">
+      <Image
         src={image}
         alt={imageAlt}
-        onerror={`this.onerror=null;this.src='${fallbackImg.src}';`}
+        width={600}
+        height={400}
+        onerror={`this.onerror=null; this.src='${fallbackImg.src}';`}
       />
       <span class="inline-block w-full md:text-[11px] text-[10px] md:leading-[1.6] leading-[1.5] bg-gray-300 p-2 opacity-70 truncate">
         {title}
