@@ -29,7 +29,7 @@ const { name, start, end, summary, links } = Astro.props;
 
 {
   (
-    <div class="flex flex-wrap gap-1 my-2">
+    <div class="flex flex-wrap gap-2 md:mt-6 mt-4 mb-2">
       {(links ?? []).map((link) => (
         <OpenGraph url={link} />
       ))}

@@ -1,13 +1,27 @@
 ---
+import Badge from "./Badge.astro";
 import Section from "./Section.astro";
 ---
 
 <Section id="hidenorioka" heading="Hidenori Oka">
-  <h1 class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] mb-2">
+  <h1
+    class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
+  >
     岡 英紀
   </h1>
-  <p class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5]">
+  <p
+    class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
+  >
     1995年生まれ、兵庫県淡路市出身。Webフロントエンドエンジニア。<br />
     暮らしも仕事も、「最小限」で「最大」の効果を生み出せるような設計に興味があります。
   </p>
+
+  <div>
+    <Badge label="Github" href="https://github.com/hidenorioka" />
+    <Badge label="Zenn" href="https://zenn.dev/hidenorioka" />
+    <Badge label="LinkedIn" href="https://www.linkedin.com/in/hidenorioka" />
+    <Badge label="Wantedly" href="https://www.wantedly.com/id/vwkr6t" />
+    <Badge label="YOUTRUST" href="https://youtrust.jp/users/hidenorioka" />
+    <Badge label="X" href="https://x.com/hidenorioka" />
+  </div>
 </Section>
