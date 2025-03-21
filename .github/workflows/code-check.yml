@@ -19,6 +19,12 @@ jobs:
         with:
           node-version: "20.15.0"
 
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set Yarn Version
+        run: yarn set version 4.5.1
+
       - name: Install Dependencies
         run: yarn install
 
