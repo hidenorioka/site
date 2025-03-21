@@ -4,4 +4,5 @@ dist
 
 .astro
 
-.yarn/*
+# yarn corepack
+.yarn/install-state.gz

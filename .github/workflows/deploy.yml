@@ -18,10 +18,18 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set Yarn Version
+        run: yarn set version 4.5.1
+
       - name: Setup Astro
         uses: withastro/action@v2
         with:
           node-version: "20.15.0"
+
   deploy:
     name: Deploy
     needs: build
@@ -43,6 +51,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: Generate Tag
         id: tag
         run: |
