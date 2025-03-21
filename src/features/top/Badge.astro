@@ -1,0 +1,19 @@
+---
+type Props = {
+  label: string;
+  href: string;
+};
+
+const { label, href } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center justify-center bg-gray-300 px-2 py-1 rounded-[2px]"
+>
+  <span class="md:text-[11px] text-[10px] md:leading-[1.6] leading-[1.5]"
+    >{label}</span
+  >
+</a>

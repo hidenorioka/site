@@ -30,7 +30,11 @@ const isNoContent = !title && !ogUrl;
 
 {
   isNoContent ? null : (
-    <a href={ogUrl} target="_blank" class="inline-block max-w-[300px] w-full">
+    <a
+      href={ogUrl}
+      target="_blank"
+      class="inline-block md:max-w-[300px] max-w-[600px] w-full"
+    >
       <Image
         src={image}
         alt={imageAlt}
