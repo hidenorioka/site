@@ -5,15 +5,15 @@ import { Image } from "astro:assets";
 type Props = {
   href: string;
   external?: boolean;
-  className?: string;
+  class?: string;
 };
 
-const { href, external = false, className } = Astro.props;
+const { href, external = false, class: overrideClass } = Astro.props;
 ---
 
 <a
   href={href}
-  class:list={["underline underline-offset-3", className]}
+  class:list={["underline underline-offset-3", overrideClass]}
   {...external && {
     target: "_blank",
     rel: "noopener noreferrer",

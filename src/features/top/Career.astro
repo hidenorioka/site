@@ -1,29 +1,42 @@
 ---
 import Section from "./Section.astro";
 import CareerSummary from "./CareerSummary.astro";
+
+type CareerHistory = {
+  name: string;
+  url: string;
+  start: string;
+  end?: string;
+  summary: string;
+  links?: string[];
+};
+
+const CAREER_HISTORIES = [
+  {
+    name: "GMOフィナンシャルホールディングス株式会社",
+    url: "https://www.gmofh.com/",
+    start: "2023年11月",
+    end: "2025年4月",
+    summary:
+      "医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。現在は医療クリニック・薬局向けシステムのWebフロントエンド開発リードを担当しました。",
+    links: [
+      "https://prtimes.jp/main/html/rd/p/000000738.000030257.html",
+      "https://prtimes.jp/main/html/rd/p/000000773.000030257.html",
+    ],
+  },
+  {
+    name: "株式会社ラクスパートナーズ",
+    url: "https://www.rakus-partners.co.jp/",
+    start: "2019年1月",
+    end: "2023年10月",
+    summary:
+      "未経験からアプリケーションエンジニアとして入社しました。客先常駐で合計4社の開発チームに参画し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。",
+  },
+] as const satisfies CareerHistory[];
 ---
 
-<Section id="career" heading="Career">
+<Section heading="Career">
   <ul>
-    <li>
-      <CareerSummary
-        name="GMOフィナンシャルホールディングス株式会社"
-        start="2023年11月"
-        end="2025年4月"
-        summary="医療プラットフォーム事業の新規立ち上げにおいて、Webアプリケーション開発メンバーとして参画。現在は医療クリニック・薬局向けシステムのWebフロントエンド開発リードをしています。"
-        links={[
-          "https://prtimes.jp/main/html/rd/p/000000738.000030257.html",
-          "https://prtimes.jp/main/html/rd/p/000000773.000030257.html",
-        ]}
-      />
-    </li>
-    <li class="md:mt-10 mt-8">
-      <CareerSummary
-        name="株式会社ラクスパートナーズ"
-        start="2019年1月"
-        end="2023年10月"
-        summary="未経験からアプリケーションエンジニアとして入社しました。客先常駐で合計4社の開発チームに参画し、Webフロントエンドを中心にアプリケーション開発の内製化支援に取り組みました。"
-      />
-    </li>
+    {CAREER_HISTORIES.map((history) => <CareerSummary {...history} />)}
   </ul>
 </Section>
