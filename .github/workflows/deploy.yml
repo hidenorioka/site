@@ -28,7 +28,7 @@ jobs:
       - name: Setup Astro
         uses: withastro/action@v2
         with:
-          node-version: "20.15.0"
+          node-version: "20.18.0"
 
   deploy:
     name: Deploy
