@@ -537,10 +537,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/hauora-sans@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@fontsource/hauora-sans@npm:5.1.0"
-  checksum: 10c0/ca918f94c90490c917962b9f6e3560fe7dc6b83d46da52cf2f752f42a46df8c1a1a4198ead21e2e24cdad3777621a41dfa5ece9e5e796fc1f89c812987058f40
+"@fontsource/hauora-sans@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "@fontsource/hauora-sans@npm:5.2.5"
+  checksum: 10c0/d31c0e525992609e7453579e3aa6a2cea24e0362f43257babb345109af976940f1510e87f50599585491f692404028c7b4294264e2ba8f842be63f171645d25b
   languageName: node
   linkType: hard
 
@@ -6887,7 +6887,7 @@ __metadata:
     "@astrojs/check": "npm:^0.9.4"
     "@astrojs/mdx": "npm:^4.2.2"
     "@astrojs/sitemap": "npm:^3.3.0"
-    "@fontsource/hauora-sans": "npm:^5.1.0"
+    "@fontsource/hauora-sans": "npm:^5.2.5"
     "@tailwindcss/vite": "npm:^4.0.17"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.0"
     astro: "npm:^5.5.5"
