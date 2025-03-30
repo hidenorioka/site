@@ -1268,7 +1268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint-plugin-jsx-a11y@npm:^6":
+"@types/eslint-plugin-jsx-a11y@npm:^6.10.0":
   version: 6.10.0
   resolution: "@types/eslint-plugin-jsx-a11y@npm:6.10.0"
   dependencies:
@@ -6862,7 +6862,7 @@ __metadata:
     "@astrojs/sitemap": "npm:^3.3.0"
     "@fontsource/hauora-sans": "npm:^5.1.0"
     "@tailwindcss/vite": "npm:^4.0.17"
-    "@types/eslint-plugin-jsx-a11y": "npm:^6"
+    "@types/eslint-plugin-jsx-a11y": "npm:^6.10.0"
     astro: "npm:^5.5.5"
     dompurify: "npm:^3.2.4"
     eslint: "npm:^9.19.0"
