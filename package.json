@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.2",
-    "@fontsource/hauora-sans": "^5.1.0",
+    "@fontsource/hauora-sans": "^5.2.5",
     "astro": "^5.5.5",
     "dompurify": "^3.2.4",
     "open-graph-scraper": "^6.9.0"
