@@ -1,9 +1,12 @@
-@import "@fontsource/hauora-sans";
+@import "@fontsource-variable/noto-sans-jp";
 @import "tailwindcss";
 
 @layer base {
   body {
-    font-family: "Hauora Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+      "Hiragino Kaku Gothic ProN", "Noto Sans JP Variable", "Yu Gothic",
+      "Meiryo", sans-serif;
     font-size: 16px;
     line-height: 1;
     letter-spacing: 0.4px;
