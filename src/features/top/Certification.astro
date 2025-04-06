@@ -1,12 +1,27 @@
 ---
 import Section from "./Section.astro";
-import OpenGraph from "./OpenGraph.astro";
+import Link from "@components/Link.astro";
 ---
 
 <Section heading="Certification">
-  <div class="flex flex-wrap gap-1">
-    <OpenGraph
-      url="https://www.credly.com/badges/4dba18b3-ac1f-4e2c-9fed-beba355c4220/public_url"
-    />
+  <div class="flex flex-col gap-3">
+    <div>
+      <Link
+        href="https://www.credly.com/badges/31769f2d-6dba-4f33-b3fa-61c158232814/public_url"
+        class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] inline-block hover:opacity-50 transition duration-300"
+        external
+      >
+        AWS Certified Solutions Architect – Associate
+      </Link>
+    </div>
+    <div>
+      <Link
+        href="https://www.credly.com/badges/4dba18b3-ac1f-4e2c-9fed-beba355c4220/public_url"
+        class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] inline-block hover:opacity-50 transition duration-300"
+        external
+      >
+        AWS Certified Cloud Practitioner
+      </Link>
+    </div>
   </div>
 </Section>

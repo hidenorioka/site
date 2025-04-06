@@ -1,26 +1,17 @@
 ---
-import Link from "@components/Link.astro";
-import OpenGraph from "./OpenGraph.astro";
-
 type Props = {
   name: string;
-  url: string;
   start: string;
   end?: string;
   summary: string;
-  links?: string[];
 };
 
-const { name, start, end, summary, links, url } = Astro.props;
-
-const hasLinks = links?.length ? true : false;
+const { name, start, end, summary } = Astro.props;
 ---
 
 <li class="not-first:mt-8 not-first:md:mt-10">
   <h3 class="md:text-[14px] text-[13px] md:mb-3 mb-2">
-    <Link href={url} external class="hover:opacity-50 transition duration-300">
-      {name}
-    </Link>
+    {name}
   </h3>
   <p class="md:text-[12px] text-[10px] text-gray-500">
     {`${start}${end ? `〜${end}` : "〜現在"}`}
@@ -31,14 +22,4 @@ const hasLinks = links?.length ? true : false;
   >
     <p>{summary}</p>
   </div>
-
-  {
-    hasLinks && (
-      <div class="flex flex-wrap gap-2 md:mt-6 mt-4 mb-2">
-        {(links ?? []).map((link) => (
-          <OpenGraph url={link} />
-        ))}
-      </div>
-    )
-  }
 </li>
