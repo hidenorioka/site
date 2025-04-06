@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  node:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: site/development
+    working_dir: /app
+    volumes:
+      - ../:/app
+    ports:
+      - "4321:4321"
+    tty: true
+    stdin_open: true
