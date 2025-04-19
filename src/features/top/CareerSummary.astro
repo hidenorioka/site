@@ -9,17 +9,20 @@ type Props = {
 const { name, start, end, summary } = Astro.props;
 ---
 
-<li class="not-first:mt-8 not-first:md:mt-10">
-  <h3 class="md:text-[14px] text-[13px] md:mb-3 mb-2">
-    {name}
-  </h3>
-  <p class="md:text-[12px] text-[10px] text-gray-500">
-    {`${start}${end ? `〜${end}` : "〜現在"}`}
-  </p>
+<li class="not-first:mt-6 not-first:md:mt-8">
+  <details>
+    <summary class="md:text-[14px] text-[13px]">
+      {name}
 
-  <div
-    class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:pt-4 pt-3"
-  >
-    <p>{summary}</p>
-  </div>
+      <span class="block md:text-[12px] text-[10px] text-gray-500 md:mt-3 mt-2">
+        {`${start}${end ? `〜${end}` : "〜現在"}`}
+      </span>
+    </summary>
+
+    <div
+      class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:pt-4 pt-3"
+    >
+      <p>{summary}</p>
+    </div>
+  </details>
 </li>

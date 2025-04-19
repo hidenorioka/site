@@ -1,20 +1,32 @@
 ---
+import { Image } from "astro:assets";
+import profileImg from "@assets/profile.jpg";
 import Badge from "./Badge.astro";
-import Section from "./Section.astro";
 ---
 
-<Section heading="Hidenori Oka">
-  <h1
-    class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
-  >
-    岡 英紀
-  </h1>
-  <p
-    class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
-  >
-    1995年生まれ、兵庫県淡路市出身。Webエンジニア。<br />
-    暮らしも仕事も、「最小限」で「最大」の効果を生み出せるような設計に興味があります。
-  </p>
+<section>
+  <div class="text-center md:mb-2 mb-4">
+    <Image
+      src={profileImg}
+      alt=""
+      class="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-[50%] inline-block"
+    />
+  </div>
+  <hgroup>
+    <h1
+      class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
+    >
+      岡 英紀
+      <span class="ml-[4px]">Hidenori Oka</span>
+    </h1>
+
+    <p
+      class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
+    >
+      1995年生まれ、兵庫県淡路市出身。Webエンジニア。<br />
+      最小限で、最大の効果を生み出せるような設計に興味があります。
+    </p>
+  </hgroup>
 
   <div>
     <Badge label="Github" href="https://github.com/hidenorioka" />
@@ -23,4 +35,4 @@ import Section from "./Section.astro";
     <Badge label="Wantedly" href="https://www.wantedly.com/id/vwkr6t" />
     <Badge label="YOUTRUST" href="https://youtrust.jp/users/hidenorioka" />
   </div>
-</Section>
+</section>
