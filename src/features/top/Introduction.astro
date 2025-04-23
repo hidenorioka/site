@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import profileImg from "@assets/profile.jpg";
-import Badge from "./Badge.astro";
+import githubIconImg from "@assets/social-icons/github.svg";
+import githubWhiteIconImg from "@assets/social-icons/github-white.svg";
+import zennIconImg from "@assets/social-icons/zenn.svg";
+import zennWhiteIconImg from "@assets/social-icons/zenn-white.svg";
+import linkedinIconImg from "@assets/social-icons/linkedin.png";
+import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
+import wantedlyIconImg from "@assets/social-icons/wantedly.svg";
+import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
 ---
 
 <section>
@@ -12,7 +19,7 @@ import Badge from "./Badge.astro";
       class="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-[50%] inline-block"
     />
   </div>
-  <hgroup>
+  <hgroup class="md:mb-3 mb-4">
     <h1
       class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
     >
@@ -20,19 +27,76 @@ import Badge from "./Badge.astro";
       <span class="ml-[4px]">Hidenori Oka</span>
     </h1>
 
-    <p
-      class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
-    >
+    <p class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5]">
       1995年生まれ、兵庫県淡路市出身。Webエンジニア。<br />
       最小限で、最大の効果を生み出せるような設計に興味があります。
     </p>
   </hgroup>
 
-  <div>
-    <Badge label="Github" href="https://github.com/hidenorioka" />
-    <Badge label="Zenn" href="https://zenn.dev/hidenorioka" />
-    <Badge label="LinkedIn" href="https://www.linkedin.com/in/hidenorioka" />
-    <Badge label="Wantedly" href="https://www.wantedly.com/id/vwkr6t" />
-    <Badge label="YOUTRUST" href="https://youtrust.jp/users/hidenorioka" />
+  <div class="flex gap-4">
+    <a
+      href="https://github.com/hidenorioka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+    >
+      <Image src={githubIconImg} alt="GitHub" class="block dark:hidden" />
+      <Image src={githubWhiteIconImg} alt="GitHub" class="hidden dark:block" />
+    </a>
+    <a
+      href="https://zenn.dev/hidenorioka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+    >
+      <Image src={zennIconImg} alt="Zenn" class="block dark:hidden" />
+      <Image src={zennWhiteIconImg} alt="Zenn" class="hidden dark:block" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/hidenorioka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+    >
+      <Image src={linkedinIconImg} alt="LinkedIn" class="block dark:hidden" />
+      <Image
+        src={linkedinWhiteIconImg}
+        alt="LinkedIn"
+        class="hidden dark:block"
+      />
+    </a>
+    <a
+      href="https://www.wantedly.com/id/vwkr6t"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+    >
+      <Image src={wantedlyIconImg} alt="Wantedly" class="block dark:hidden" />
+      <Image
+        src={wantedlyWhiteIconImg}
+        alt="Wantedly"
+        class="hidden dark:block"
+      />
+    </a>
+    <a
+      href="https://youtrust.jp/users/hidenorioka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      aria-label="YOUTRUST"
+    >
+      <svg viewBox="0 0 32 32" class="w-8 h-8">
+        <defs>
+          <clipPath id="circle-clip">
+            <circle cx="16" cy="16" r="16"></circle>
+          </clipPath>
+        </defs>
+        <circle cx="16" cy="16" r="16" fill="#309DA5"></circle>
+        <path
+          d="M-4 16L36 16L36 36L-4 36Z"
+          fill="#157577"
+          clip-path="url(#circle-clip)"></path>
+      </svg>
+    </a>
   </div>
 </section>
