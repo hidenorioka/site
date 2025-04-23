@@ -22,7 +22,11 @@ const { href, external = false, class: overrideClass } = Astro.props;
   <slot />
   {
     external && (
-      <Image src={externalLinkIcon} alt="" class="inline-block w-4 h-4" />
+      <Image
+        src={externalLinkIcon}
+        alt=""
+        class="inline-block w-4 h-4 dark:invert dark:brightness-90"
+      />
     )
   }
 </a>
