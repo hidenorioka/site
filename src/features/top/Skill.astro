@@ -1,0 +1,171 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import typescriptIcon from "@assets/skills/typescript.svg";
+import javascriptIcon from "@assets/skills/javascript.svg";
+import htmlIcon from "@assets/skills/html.svg";
+import cssIcon from "@assets/skills/css.svg";
+import reactIcon from "@assets/skills/react.svg";
+import nextjsIcon from "@assets/skills/nextjs.svg";
+import graphqlIcon from "@assets/skills/graphql.svg";
+
+type Skill = {
+  name: string;
+  level: number;
+  icon: ImageMetadata;
+};
+
+const SKILLS: Skill[] = [
+  {
+    name: "TypeScript",
+    level: 3,
+    icon: typescriptIcon,
+  },
+  {
+    name: "JavaScript",
+    level: 2,
+    icon: javascriptIcon,
+  },
+  {
+    name: "HTML",
+    level: 2,
+    icon: htmlIcon,
+  },
+  {
+    name: "CSS",
+    level: 2,
+    icon: cssIcon,
+  },
+  {
+    name: "React",
+    level: 2,
+    icon: reactIcon,
+  },
+  {
+    name: "Next.js",
+    level: 2,
+    icon: nextjsIcon,
+  },
+  {
+    name: "GraphQL",
+    level: 3,
+    icon: graphqlIcon,
+  },
+] as const satisfies Skill[];
+
+const getLevelColor = (level: number) => {
+  switch (level) {
+    case 3:
+      return "#10b981";
+    case 2:
+      return "#f59e0b";
+    case 1:
+      return "#8b5cf6";
+    default:
+      return "#6b7280";
+  }
+};
+---
+
+<Section heading="Skill">
+  <div class="mb-6">
+    <div class="hidden md:flex items-center justify-center gap-6">
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #10b981">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >リード</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #f59e0b">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >実務</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #8b5cf6">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >入門・個人開発</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #6b7280">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >その他</span
+        >
+      </div>
+    </div>
+    <div class="md:hidden grid grid-cols-1 gap-2 max-w-[200px] mx-auto">
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #10b981">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >リード</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #f59e0b">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >実務</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #8b5cf6">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >入門・個人開発</span
+        >
+      </div>
+      <div
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800"
+      >
+        <div class="w-2 h-2 rounded-full" style="background-color: #6b7280">
+        </div>
+        <span class="text-xs font-medium text-gray-700 dark:text-gray-200"
+          >その他</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {
+      SKILLS.map((skill) => (
+        <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-primary-500/20 group flex items-center">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="w-6 h-6 flex-shrink-0 bg-white rounded flex items-center justify-center">
+              <Image src={skill.icon} alt={skill.name} class="w-5 h-5" />
+            </div>
+            <div class="flex items-center gap-2 min-w-0">
+              <div
+                class="w-2 h-2 rounded-full flex-shrink-0"
+                style={`background-color: ${getLevelColor(skill.level)}`}
+              />
+              <span class="md:text-sm text-xs truncate">{skill.name}</span>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>
