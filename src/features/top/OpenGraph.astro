@@ -5,14 +5,16 @@ import fallbackImg from "@assets/ogp-fallback.png";
 
 type Props = {
   url: string;
+  class?: string;
 };
 
 let title = "";
 let ogUrl = "";
 let image = "";
 let imageAlt = "";
+let publishedDate = "";
 
-const { url } = Astro.props;
+const { url, class: overrideClass } = Astro.props;
 
 try {
   const { result } = await ogs({ url });
@@ -21,6 +23,9 @@ try {
   ogUrl = result.ogUrl ?? "";
   image = result.ogImage?.[0]?.url ?? "";
   imageAlt = result.ogImage?.[0]?.alt ?? "";
+
+  const date = new Date(result.ogDate ?? new Date());
+  publishedDate = `${date.getFullYear()}年${String(date.getMonth() + 1).padStart(2, "0")}月`;
 } catch (error) {
   console.error(error);
 }
@@ -33,18 +38,30 @@ const isNoContent = !title && !ogUrl;
     <a
       href={ogUrl}
       target="_blank"
-      class="inline-block md:max-w-[300px] max-w-[600px] w-full hover:opacity-70 transition duration-300"
+      rel="noopener noreferrer"
+      class:list={["flex flex-col w-full h-full", overrideClass]}
     >
-      <Image
-        src={image}
-        alt={imageAlt}
-        width={600}
-        height={400}
-        onerror={`this.onerror=null; this.src='${fallbackImg.src}';`}
-      />
-      <span class="inline-block w-full md:text-[11px] text-[10px] md:leading-[1.6] leading-[1.5] bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 p-2 truncate">
-        {title}
-      </span>
+      <div class="relative w-full aspect-[1.91/1] mb-4 transition-transform duration-300 ease-in-out group-hover:scale-105 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+        <Image
+          src={image}
+          alt={imageAlt}
+          width={600}
+          height={314}
+          class="object-cover w-full h-full"
+          onerror={`this.onerror=null; this.src='${fallbackImg.src}';`}
+        />
+      </div>
+      <div class="text-center flex-1 flex flex-col justify-between">
+        <h3 class="md:text-[13px] text-[12px] font-medium mb-2 line-clamp-2 md:leading-[1.6] leading-[1.5]">
+          {title}
+        </h3>
+        <time
+          datetime={publishedDate}
+          class="text-[11px] text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full inline-block"
+        >
+          {publishedDate}
+        </time>
+      </div>
     </a>
   )
 }

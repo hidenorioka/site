@@ -33,7 +33,48 @@ const CAREER_HISTORIES = [
 ---
 
 <Section heading="Career">
-  <ul>
-    {CAREER_HISTORIES.map((history) => <CareerSummary {...history} />)}
-  </ul>
+  <div class="relative">
+    <ul class="relative">
+      {
+        CAREER_HISTORIES.map((history, index) => (
+          <CareerSummary
+            {...history}
+            isLast={index === CAREER_HISTORIES.length - 1}
+          />
+        ))
+      }
+    </ul>
+    <div
+      class="absolute -left-4 -right-4 -top-6 -bottom-6 bg-gradient-to-b from-white dark:from-gray-900 to-transparent pointer-events-none opacity-20"
+    >
+    </div>
+  </div>
 </Section>
+
+<style>
+  ul {
+    counter-reset: career;
+  }
+
+  li {
+    counter-increment: career;
+  }
+
+  li::before {
+    content: counter(career, decimal-leading-zero);
+    position: absolute;
+    left: -2rem;
+    top: -0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #9ca3af;
+    opacity: 0;
+    transform: translateX(-1rem);
+    transition: all 0.3s ease-in-out;
+  }
+
+  li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>

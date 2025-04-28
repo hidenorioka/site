@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
   <head>
     <Meta title={title} description={description} />
     <GoogleAnalytics />
@@ -29,7 +29,6 @@ const { title, description } = Astro.props;
       );
     </script>
     <script>
-      // Theme toggle functionality
       document.getElementById("theme-toggle")?.addEventListener("click", () => {
         const isDark = document.documentElement.classList.contains("dark");
 
@@ -41,14 +40,12 @@ const { title, description } = Astro.props;
           localStorage.theme = "dark";
         }
 
-        // Update icons
         const lightIcon = document.getElementById("theme-toggle-light-icon");
         const darkIcon = document.getElementById("theme-toggle-dark-icon");
         lightIcon?.classList.toggle("hidden", !isDark);
         darkIcon?.classList.toggle("hidden", isDark);
       });
 
-      // Set initial icon state
       document.addEventListener("DOMContentLoaded", () => {
         const isDark = document.documentElement.classList.contains("dark");
         const lightIcon = document.getElementById("theme-toggle-light-icon");
@@ -59,26 +56,26 @@ const { title, description } = Astro.props;
     </script>
   </head>
   <body
-    class="min-h-[100svh] min-w-[340px] bg-white dark:bg-gray-900 flex flex-col text-gray-900 dark:text-gray-100"
+    class="min-h-[100svh] min-w-[340px] bg-white dark:bg-gray-900 flex flex-col text-gray-900 dark:text-gray-100 ease-in-out"
   >
     <main class="flex-1 flex flex-col">
       <slot />
     </main>
     <footer
-      class="border-t-1 border-t-gray-200 dark:border-t-gray-700 mx-8 py-4"
+      class="border-t border-gray-200 dark:border-gray-700 mx-auto w-full max-w-7xl px-8 py-6 ease-in-out"
     >
-      <ul class="flex items-center gap-4 justify-center">
+      <ul class="flex items-center gap-6 justify-center">
         <li>
           <a
             href={PAGE_ROUTES.TOP}
-            class="md:text-[12px] text-[10px] hover:opacity-50 transition duration-300"
+            class="md:text-sm text-xs hover:text-primary-600 dark:hover:text-primary-400 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary-600 dark:after:bg-primary-400 after:transition-all after:duration-300 hover:after:w-full"
             >トップ</a
           >
         </li>
         <li>
           <a
             href={PAGE_ROUTES.PRIVACY_POLICY}
-            class="md:text-[12px] text-[10px] hover:opacity-50 transition duration-300"
+            class="md:text-sm text-xs hover:text-primary-600 dark:hover:text-primary-400 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary-600 dark:after:bg-primary-400 after:transition-all after:duration-300 hover:after:w-full"
             >プライバシーポリシー</a
           >
         </li>
@@ -87,7 +84,7 @@ const { title, description } = Astro.props;
         <button
           id="theme-toggle"
           type="button"
-          class="rounded-lg p-2.5 hover:opacity-70 transition duration-300"
+          class="rounded-lg p-2.5 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 ease-in-out"
           aria-label="テーマ切り替え"
         >
           <svg
@@ -115,8 +112,8 @@ const { title, description } = Astro.props;
         </button>
       </div>
 
-      <div class="text-center md:mt-10 mt-6">
-        <p class="md:text-[12px] text-[10px] text-gray-500">
+      <div class="text-center md:mt-8 mt-6">
+        <p class="md:text-sm text-xs text-gray-500 dark:text-gray-400">
           © 2025 hidenorioka
         </p>
       </div>
