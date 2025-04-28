@@ -1,27 +1,75 @@
 ---
 import Section from "./Section.astro";
-import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import awsSaaImg from "@assets/certification-badges/aws-saa.png";
+import awsCcpImg from "@assets/certification-badges/aws-ccp.png";
+import ipaFeImg from "@assets/certification-badges/ipa-fe.svg";
+
+type Certification = {
+  title: string;
+  url: string;
+  date: string;
+  badge: ImageMetadata;
+};
+
+const CERTIFICATIONS: Certification[] = [
+  {
+    title: "基本情報技術者 / Fundamental Information Technology Engineer",
+    url: "",
+    date: "2025年05月",
+    badge: ipaFeImg,
+  },
+  {
+    title: "AWS Certified Solutions Architect – Associate",
+    url: "https://www.credly.com/badges/31769f2d-6dba-4f33-b3fa-61c158232814/public_url",
+    date: "2025年04月",
+    badge: awsSaaImg,
+  },
+  {
+    title: "AWS Certified Cloud Practitioner",
+    url: "https://www.credly.com/badges/4dba18b3-ac1f-4e2c-9fed-beba355c4220/public_url",
+    date: "2025年03月",
+    badge: awsCcpImg,
+  },
+];
 ---
 
 <Section heading="Certification">
-  <div class="flex flex-col gap-3">
-    <div>
-      <Link
-        href="https://www.credly.com/badges/31769f2d-6dba-4f33-b3fa-61c158232814/public_url"
-        class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] inline-block hover:opacity-50 transition duration-300"
-        external
-      >
-        AWS Certified Solutions Architect – Associate
-      </Link>
-    </div>
-    <div>
-      <Link
-        href="https://www.credly.com/badges/4dba18b3-ac1f-4e2c-9fed-beba355c4220/public_url"
-        class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] inline-block hover:opacity-50 transition duration-300"
-        external
-      >
-        AWS Certified Cloud Practitioner
-      </Link>
-    </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {
+      CERTIFICATIONS.map(({ title, url, date, badge }) => (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            "flex flex-col w-full h-full p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-primary-500/20 group",
+            { "pointer-events-none": !url },
+          ]}
+        >
+          <div class="relative w-full aspect-[1.91/1] mb-4 transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-lg overflow-hidden">
+            <Image
+              src={badge}
+              alt=""
+              width={600}
+              height={314}
+              class="object-contain w-full h-full"
+            />
+          </div>
+          <div class="text-center flex-1 flex flex-col justify-between">
+            <h3 class="md:text-[13px] text-[12px] font-medium mb-2 line-clamp-2 md:leading-[1.6] leading-[1.5]">
+              {title}
+            </h3>
+            <time
+              datetime={date}
+              class="text-[11px] text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full inline-block"
+            >
+              {date}
+            </time>
+          </div>
+        </a>
+      ))
+    }
   </div>
 </Section>

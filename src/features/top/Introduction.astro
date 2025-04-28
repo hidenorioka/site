@@ -11,34 +11,36 @@ import wantedlyIconImg from "@assets/social-icons/wantedly.svg";
 import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
 ---
 
-<section>
-  <div class="text-center md:mb-2 mb-4">
+<section class="animate-fadeIn">
+  <div class="text-center md:mb-6 mb-4 group">
     <Image
       src={profileImg}
       alt=""
-      class="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-[50%] inline-block"
+      class="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-[50%] inline-block shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
     />
   </div>
-  <hgroup class="md:mb-3 mb-4">
+  <hgroup class="md:mb-8 mb-6">
     <h1
-      class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5] md:mb-2 mb-4"
+      class="md:text-lg text-base font-medium md:leading-[1.6] leading-[1.5] md:mb-4 mb-3 animate-slideUp"
     >
       岡 英紀
-      <span class="ml-[4px]">Hidenori Oka</span>
+      <span class="ml-2 text-gray-600 dark:text-gray-300">Hidenori Oka</span>
     </h1>
 
-    <p class="md:text-[13px] text-[12px] md:leading-[1.6] leading-[1.5]">
+    <p
+      class="md:text-base text-sm md:leading-[1.8] leading-[1.7] text-gray-700 dark:text-gray-200 animate-slideUp [animation-delay:200ms]"
+    >
       1995年生まれ、兵庫県淡路市出身。Webエンジニア。<br />
       最小限で、最大の効果を生み出せるような設計に興味があります。
     </p>
   </hgroup>
 
-  <div class="flex gap-4">
+  <div class="flex gap-6 animate-slideUp [animation-delay:400ms]">
     <a
       href="https://github.com/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
     >
       <Image src={githubIconImg} alt="GitHub" class="block dark:hidden" />
       <Image src={githubWhiteIconImg} alt="GitHub" class="hidden dark:block" />
@@ -47,7 +49,7 @@ import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
       href="https://zenn.dev/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
     >
       <Image src={zennIconImg} alt="Zenn" class="block dark:hidden" />
       <Image src={zennWhiteIconImg} alt="Zenn" class="hidden dark:block" />
@@ -56,7 +58,7 @@ import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
       href="https://www.linkedin.com/in/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
     >
       <Image src={linkedinIconImg} alt="LinkedIn" class="block dark:hidden" />
       <Image
@@ -69,7 +71,7 @@ import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
       href="https://www.wantedly.com/id/vwkr6t"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
     >
       <Image src={wantedlyIconImg} alt="Wantedly" class="block dark:hidden" />
       <Image
@@ -82,7 +84,7 @@ import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
       href="https://youtrust.jp/users/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 hover:opacity-70 transition duration-300"
+      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
       aria-label="YOUTRUST"
     >
       <svg viewBox="0 0 32 32" class="w-8 h-8">
@@ -100,3 +102,34 @@ import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
     </a>
   </div>
 </section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+</style>
