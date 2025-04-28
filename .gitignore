@@ -6,3 +6,6 @@ dist
 
 # yarn corepack
 .yarn/install-state.gz
+
+# playwright
+test-results
