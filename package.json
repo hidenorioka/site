@@ -3,9 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "engines": {
-    "yarn": "4.5.1"
+    "yarn": "4.9.1"
   },
-  "packageManager": "yarn@4.5.1",
+  "packageManager": "yarn@4.9.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -41,6 +41,6 @@
   },
   "volta": {
     "node": "20.18.0",
-    "yarn": "4.5.1"
+    "yarn": "4.9.1"
   }
 }
