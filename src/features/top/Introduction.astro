@@ -3,97 +3,92 @@ import { Image } from "astro:assets";
 import profileImg from "@assets/profile.webp";
 import githubIconImg from "@assets/social-icons/github.svg";
 import githubWhiteIconImg from "@assets/social-icons/github-white.svg";
-import zennIconImg from "@assets/social-icons/zenn.svg";
-import zennWhiteIconImg from "@assets/social-icons/zenn-white.svg";
 import linkedinIconImg from "@assets/social-icons/linkedin.png";
 import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
-import wantedlyIconImg from "@assets/social-icons/wantedly.svg";
-import wantedlyWhiteIconImg from "@assets/social-icons/wantedly-white.svg";
 ---
 
-<section class="animate-fadeIn">
-  <div class="text-center md:mb-6 mb-4 group">
+<section class="animate-fadeIn text-center">
+  <div class="relative mb-8 group">
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-primary-400/20 to-accent-400/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+    >
+    </div>
     <Image
       src={profileImg}
       alt=""
-      class="md:w-[160px] md:h-[160px] w-[120px] h-[120px] rounded-[50%] inline-block shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
+      class="relative md:w-44 md:h-44 w-32 h-32 rounded-full mx-auto shadow-xl border-4 border-white/50 dark:border-slate-800/50 transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-2xl"
     />
   </div>
-  <hgroup class="md:mb-8 mb-6">
-    <div class="flex items-baseline gap-2">
-      <h1
-        class="md:text-lg text-base font-medium md:leading-[1.6] leading-[1.5] md:mb-4 mb-3 animate-slideUp"
-      >
+
+  <hgroup class="mb-10 space-y-4">
+    <div class="space-y-2">
+      <h1 class="text-3xl md:text-4xl font-bold text-gradient animate-slideUp">
         岡 英紀
       </h1>
       <p
-        class="md:text-base text-sm text-gray-600 dark:text-gray-300 animate-slideUp [animation-delay:100ms] mb-0"
+        class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light animate-slideUp [animation-delay:100ms]"
       >
         Hidenori Oka
       </p>
     </div>
 
-    <p
-      class="md:text-base text-sm md:leading-[1.8] leading-[1.7] text-gray-700 dark:text-gray-200 animate-slideUp [animation-delay:200ms]"
-    >
-      1995年生まれ、兵庫県淡路市出身。Webエンジニア。<br />
-      最小限で、最大の効果を生み出せるような設計に興味があります。
-    </p>
+    <div class="max-w-2xl mx-auto">
+      <p
+        class="text-md leading-relaxed text-slate-700 dark:text-slate-300 animate-slideUp [animation-delay:200ms]"
+      >
+        1995年生まれ、兵庫県淡路市出身。ソフトウェアエンジニア。
+      </p>
+    </div>
   </hgroup>
 
-  <div class="flex gap-6 animate-slideUp [animation-delay:400ms]">
+  <div
+    class="flex justify-center gap-4 animate-slideUp [animation-delay:400ms]"
+  >
     <a
       href="https://github.com/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
+      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
     >
-      <Image src={githubIconImg} alt="GitHub" class="block dark:hidden" />
-      <Image src={githubWhiteIconImg} alt="GitHub" class="hidden dark:block" />
-    </a>
-    <a
-      href="https://zenn.dev/hidenorioka"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
-    >
-      <Image src={zennIconImg} alt="Zenn" class="block dark:hidden" />
-      <Image src={zennWhiteIconImg} alt="Zenn" class="hidden dark:block" />
+      <Image
+        src={githubIconImg}
+        alt="GitHub"
+        class="w-6 h-6 block dark:hidden transition-transform duration-200 group-hover:scale-105"
+      />
+      <Image
+        src={githubWhiteIconImg}
+        alt="GitHub"
+        class="w-6 h-6 hidden dark:block transition-transform duration-200 group-hover:scale-105"
+      />
     </a>
     <a
       href="https://jp.linkedin.com/in/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
+      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
     >
-      <Image src={linkedinIconImg} alt="LinkedIn" class="block dark:hidden" />
+      <Image
+        src={linkedinIconImg}
+        alt="LinkedIn"
+        class="w-6 h-6 object-contain block dark:hidden transition-transform duration-200 group-hover:scale-105"
+      />
       <Image
         src={linkedinWhiteIconImg}
         alt="LinkedIn"
-        class="hidden dark:block"
-      />
-    </a>
-    <a
-      href="https://www.wantedly.com/id/vwkr6t"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
-    >
-      <Image src={wantedlyIconImg} alt="Wantedly" class="block dark:hidden" />
-      <Image
-        src={wantedlyWhiteIconImg}
-        alt="Wantedly"
-        class="hidden dark:block"
+        class="w-6 h-6 object-contain hidden dark:block transition-transform duration-200 group-hover:scale-105"
       />
     </a>
     <a
       href="https://youtrust.jp/users/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center justify-center w-8 h-8 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
+      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
       aria-label="YOUTRUST"
     >
-      <svg viewBox="0 0 32 32" class="w-8 h-8">
+      <svg
+        viewBox="0 0 32 32"
+        class="w-6 h-6 transition-transform duration-200 group-hover:scale-105"
+      >
         <defs>
           <clipPath id="circle-clip">
             <circle cx="16" cy="16" r="16"></circle>
