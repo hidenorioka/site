@@ -6,8 +6,8 @@ This is an Astro-based personal portfolio website.
 ## Project Setup
 
 - **Framework**: Astro v5
-- **Package Manager**: Yarn 4.5.1 (required)
-- **Node Version**: 20.18.0
+- **Package Manager**: Yarn 4.6.0 (required)
+- **Node Version**: 22.11.0 (LTS)
 - **Styling**: Tailwind CSS v4
 - **TypeScript**: Enabled
 
