@@ -40,7 +40,7 @@ This is an Astro-based personal portfolio website.
 
 ## Important Notes
 
-- Always run `yarn lint` and `yarn type-check` after making changes
+- Always run `yarn lint` and `yarn type-check` and `yarn astro-check` after making changes
 - Follow existing code patterns and naming conventions
 - Use Astro components (.astro) for UI components
 - Tailwind CSS classes are preferred for styling
