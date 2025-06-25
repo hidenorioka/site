@@ -9,15 +9,24 @@ import { PAGE_ROUTES } from "@constants/routing";
 type Props = {
   title?: string;
   description?: string;
+  publishDate?: Date;
+  tags?: string[];
+  type?: "article" | "website";
 };
 
-const { title, description } = Astro.props;
+const { title, description, publishDate, tags, type } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="ja" class="scroll-smooth">
   <head>
-    <Meta title={title} description={description} />
+    <Meta
+      title={title}
+      description={description}
+      publishDate={publishDate}
+      tags={tags}
+      type={type}
+    />
     <GoogleAnalytics />
     <script is:inline>
       // On page load, apply the correct theme
@@ -81,6 +90,15 @@ const { title, description } = Astro.props;
           >
             hidenorioka
           </a>
+
+          <!-- <nav class="flex items-center gap-6">
+            <a
+              href={PAGE_ROUTES.POST}
+              class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 font-medium"
+            >
+              投稿
+            </a>
+          </nav> -->
         </div>
       </div>
     </nav>

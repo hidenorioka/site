@@ -20,7 +20,7 @@ const config = [
   },
   {
     name: "ignores",
-    ignores: [".astro", "node_modules", "dist"],
+    ignores: ["node_modules", "dist", ".astro"],
   },
 ];
 
