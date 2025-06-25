@@ -1,10 +1,19 @@
 ---
 type Props = {
-  title: string | undefined;
-  description: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
+  publishDate?: Date | undefined;
+  tags?: string[] | undefined;
+  type?: "article" | "website" | undefined;
 };
 
-const { title: customTitle, description: customDescription } = Astro.props;
+const {
+  title: customTitle,
+  description: customDescription,
+  publishDate,
+  tags,
+  type = "website",
+} = Astro.props;
 const { pathname } = Astro.url;
 
 const SITE_NAME = "hidenorioka";
@@ -15,6 +24,77 @@ const SITE_DESCRIPTION =
 const title = customTitle ? `${customTitle} - ${SITE_NAME}` : SITE_NAME;
 const url = `${SITE_URL}${pathname}`;
 const description = customDescription || SITE_DESCRIPTION;
+
+// JSON-LD構造化データの生成
+const getJsonLdData = () => {
+  if (type === "article" && publishDate) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: customTitle,
+      description: description,
+      author: {
+        "@type": "Person",
+        name: "hidenorioka",
+        url: SITE_URL,
+      },
+      publisher: {
+        "@type": "Person",
+        name: "hidenorioka",
+        url: SITE_URL,
+      },
+      datePublished: publishDate.toISOString(),
+      dateModified: publishDate.toISOString(),
+      url: url,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+      },
+      keywords: tags?.join(", ") || undefined,
+    };
+  }
+
+  if (type === "website" && customTitle === "プライバシーポリシー") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: customTitle,
+      description: description,
+      url: url,
+      isPartOf: {
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      about: {
+        "@type": "Thing",
+        name: "プライバシーポリシー",
+        description: "個人情報保護方針および利用規約",
+      },
+      datePublished: "2025-02-04",
+      inLanguage: "ja-JP",
+    };
+  }
+
+  if (type === "website") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      author: {
+        "@type": "Person",
+        name: "hidenorioka",
+        url: SITE_URL,
+      },
+    };
+  }
+
+  return null;
+};
+
+const jsonLdData = getJsonLdData();
 ---
 
 <title>{title}</title>
@@ -41,6 +121,33 @@ const description = customDescription || SITE_DESCRIPTION;
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={`${SITE_URL}/ogp.png`} />
-<meta property="og:type" content="website" />
+{
+  publishDate && (
+    <>
+      <meta
+        property="article:published_time"
+        content={publishDate.toISOString()}
+      />
+      <meta property="article:author" content="hidenorioka" />
+    </>
+  )
+}
+{
+  tags &&
+    tags.length > 0 &&
+    tags.map((tag: string) => <meta property="article:tag" content={tag} />)
+}
+<meta property="og:type" content={type} />
 <meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:locale" content="ja_JP" />
+{
+  publishDate && (
+    <meta name="article:published_time" content={publishDate.toISOString()} />
+  )
+}
+
+{
+  jsonLdData && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdData)} />
+  )
+}

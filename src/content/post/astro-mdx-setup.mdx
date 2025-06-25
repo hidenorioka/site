@@ -1,0 +1,62 @@
+---
+title: "AstroでMDXブログを構築する方法"
+description: "Astro v5とMDXを使用してブログ機能を実装する手順を解説します。"
+publishDate: 2024-01-15
+tags: ["Astro", "MDX", "ブログ", "技術"]
+---
+
+# AstroでMDXブログを構築する
+
+このサイトではAstro v5とMDXを使用してブログ機能を実装しています。
+
+## 必要な依存関係
+
+```bash
+yarn add @astrojs/mdx
+```
+
+## 設定手順
+
+### 1. Astro設定の更新
+
+`astro.config.ts`にMDX統合を追加：
+
+```typescript
+import mdx from "@astrojs/mdx";
+
+export default defineConfig({
+  integrations: [mdx()],
+});
+```
+
+### 2. コンテンツコレクションの設定
+
+`src/content/config.ts`でスキーマを定義：
+
+```typescript
+import { defineCollection, z } from "astro:content";
+
+const blogCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    publishDate: z.date(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+```
+
+### 3. ページルーティング
+
+- ブログ一覧: `/src/pages/blog/index.astro`
+- 個別記事: `/src/pages/blog/[...slug].astro`
+
+## MDXの利点
+
+- **Markdownの簡潔性**: 文章作成が簡単
+- **Reactコンポーネント**: 再利用可能なUI要素
+- **タイプセーフティ**: TypeScriptサポート
+- **パフォーマンス**: 静的生成による高速表示
+
+この構成により、効率的で保守しやすいブログシステムが完成しました。

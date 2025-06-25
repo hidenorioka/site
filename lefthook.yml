@@ -3,6 +3,7 @@ pre-commit:
   commands:
     lint:
       run: yarn lint:fix {staged_files}
+      glob: "*.{js,ts,jsx,tsx,astro}"
       stage_fixed: true
     format:
       run: yarn format {staged_files} --ignore-unknown
