@@ -42,13 +42,13 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
   </hgroup>
 
   <div
-    class="flex justify-center gap-4 animate-slideUp [animation-delay:400ms]"
+    class="flex flex-col md:flex-row justify-center gap-3 md:gap-4 animate-slideUp [animation-delay:400ms]"
   >
     <a
       href="https://github.com/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
     >
       <Image
         src={githubIconImg}
@@ -60,12 +60,16 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
         alt="GitHub"
         class="w-6 h-6 hidden dark:block transition-transform duration-200 group-hover:scale-105"
       />
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >GitHub</span
+      >
     </a>
     <a
       href="https://jp.linkedin.com/in/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
     >
       <Image
         src={linkedinIconImg}
@@ -77,13 +81,16 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
         alt="LinkedIn"
         class="w-6 h-6 object-contain hidden dark:block transition-transform duration-200 group-hover:scale-105"
       />
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >LinkedIn</span
+      >
     </a>
     <a
       href="https://youtrust.jp/users/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
-      aria-label="YOUTRUST"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
     >
       <svg
         viewBox="0 0 32 32"
@@ -100,6 +107,10 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
           fill="#157577"
           clip-path="url(#circle-clip)"></path>
       </svg>
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >YOUTRUST</span
+      >
     </a>
   </div>
 </section>
