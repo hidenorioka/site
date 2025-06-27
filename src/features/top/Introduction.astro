@@ -5,6 +5,7 @@ import githubIconImg from "@assets/social-icons/github.svg";
 import githubWhiteIconImg from "@assets/social-icons/github-white.svg";
 import linkedinIconImg from "@assets/social-icons/linkedin.png";
 import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
+import sizuIconImg from "@assets/social-icons/sizu.svg";
 ---
 
 <section class="animate-fadeIn text-center">
@@ -42,13 +43,13 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
   </hgroup>
 
   <div
-    class="flex justify-center gap-4 animate-slideUp [animation-delay:400ms]"
+    class="flex flex-col md:flex-row justify-center gap-3 md:gap-4 animate-slideUp [animation-delay:400ms]"
   >
     <a
       href="https://github.com/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
     >
       <Image
         src={githubIconImg}
@@ -60,12 +61,21 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
         alt="GitHub"
         class="w-6 h-6 hidden dark:block transition-transform duration-200 group-hover:scale-105"
       />
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >GitHub</span
+      >
+      <div
+        class="tooltip hidden md:block absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-900 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap"
+      >
+        GitHub
+      </div>
     </a>
     <a
       href="https://jp.linkedin.com/in/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
     >
       <Image
         src={linkedinIconImg}
@@ -77,13 +87,21 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
         alt="LinkedIn"
         class="w-6 h-6 object-contain hidden dark:block transition-transform duration-200 group-hover:scale-105"
       />
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >LinkedIn</span
+      >
+      <div
+        class="tooltip hidden md:block absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-900 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap"
+      >
+        LinkedIn
+      </div>
     </a>
     <a
       href="https://youtrust.jp/users/hidenorioka"
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20"
-      aria-label="YOUTRUST"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
     >
       <svg
         viewBox="0 0 32 32"
@@ -100,6 +118,36 @@ import linkedinWhiteIconImg from "@assets/social-icons/linkedin-white.png";
           fill="#157577"
           clip-path="url(#circle-clip)"></path>
       </svg>
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >YOUTRUST</span
+      >
+      <div
+        class="tooltip hidden md:block absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-900 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap"
+      >
+        YOUTRUST
+      </div>
+    </a>
+    <a
+      href="https://sizu.me/hidenorioka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative flex items-center gap-3 md:justify-center p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200 ease-out hover:scale-105 hover:shadow-md dark:hover:shadow-slate-900/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+    >
+      <Image
+        src={sizuIconImg}
+        alt="しずかなインターネット"
+        class="w-6 h-6 transition-transform duration-200 group-hover:scale-105"
+      />
+      <span
+        class="md:hidden text-sm font-medium text-slate-700 dark:text-slate-300"
+        >しずかなインターネット</span
+      >
+      <div
+        class="tooltip hidden md:block absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-slate-900 dark:bg-slate-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap"
+      >
+        しずかなインターネット
+      </div>
     </a>
   </div>
 </section>
